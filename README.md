@@ -114,3 +114,4 @@ You can implement bidirectional transfer of messages. In this case, entities A a
 **Random Numbers**. The emulator generates packet loss and errors using a random number generator. Our past experience is that random number generators can vary widely from one machine to another. You may need to modify the random number generation code in the emulator we have suplied you. Our emulation routines have a test to see if the random number generator on your machine will work with our code.
 If you get an error message:
 It is likely that random number generation on your machine is different from what this emulator expects. Please take a look at the routine `jimsrand()` in the emulator code. Sorry. then you'll know you'll need to look at how random numbers are generated in the routine `jimsrand()`; see the comments in that routine.
+
