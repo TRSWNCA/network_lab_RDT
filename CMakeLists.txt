@@ -8,3 +8,6 @@ add_executable(RDT
 
 add_executable(rdt_1
         rdt_1.c)
+
+add_executable(rdt_2_0
+        rdt_2_0.c)
