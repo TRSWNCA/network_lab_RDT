@@ -5,3 +5,6 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(RDT
         prog2.c)
+
+add_executable(rdt_1
+        rdt_1.c)
