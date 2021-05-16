@@ -96,11 +96,11 @@ A_output(message)
     }
     printf ("j is %d %d\n", j, (int)('a'));
     /* make_pkt */
-    struct pkt packet2send;
-    make_pkt(&packet2send, message);
+    struct pkt sndpkt;
+    make_pkt(&sndpkt, message);
 
     /* udt_send */
-    tolayer3(0, packet2send);
+    tolayer3(0, sndpkt);
 
     }
 
@@ -148,7 +148,7 @@ A_init()
 B_input(packet)
   struct pkt packet;
 {
-    if(B_status == A_Wait_for_call_from_above){
+    if(B_status == B_Wait_for_call_from_below){
         /* extract */
         struct msg message;
         extract(packet, &message);
