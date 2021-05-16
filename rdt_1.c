@@ -37,24 +37,72 @@ struct pkt {
 
 /********* STUDENTS WRITE THE NEXT SEVEN ROUTINES *********/
 
+/* define A status */
+#define A_Wait_for_call_from_above 0
+
+/* define B status */
+#define B_Wait_for_call_from_below 0
+
+/* A global variables */
+int A_status;
+
+/* B global variables */
+int B_status;
+
+/* help functions */
+make_pkt(packet, message)
+        struct pkt* packet;
+        struct msg message;
+{
+    int i;
+
+    packet->seqnum = 0;
+    packet->acknum = 0;
+    packet->checksum = 0;
+
+    for(i = 0; i < 20; i++){
+        packet->payload[i] = message.data[i];
+    }
+}
+
+extract(packet, message)
+    struct pkt packet;
+    struct msg* message;
+{
+    int i;
+
+    for(i = 0; i < 20; i++){
+        message->data[i] = packet.payload[i];
+    }
+}
+
 
 /* called from layer 5, passed the data to be sent to other side */
 A_output(message)
   struct msg message;
 {
-  int i, j;
+    if(A_status == A_Wait_for_call_from_above){
+    int i, j;
 
-  i=0;
-  j=0;
+    i=0;
+    j=0;
 
-  printf("now in A_output\n");
+    printf("now in A_output\n");
 
-  for (i=0; i< 20; i++)
+    for (i=0; i< 20; i++)
     {
-      j = j+ (int) message.data[i];
+        j = j+ (int) message.data[i];
 
     }
-  printf ("j is %d %d\n", j, (int)('a'));
+    printf ("j is %d %d\n", j, (int)('a'));
+    /* make_pkt */
+    struct pkt packet2send;
+    make_pkt(&packet2send, message);
+
+    /* udt_send */
+    tolayer3(0, packet2send);
+
+    }
 
 }
 
@@ -90,6 +138,7 @@ A_timerinterrupt()
 /* entity A routines are called. You can use it to do any initialization */
 A_init()
 {
+    A_status = A_Wait_for_call_from_above;
 }
 
 
@@ -99,6 +148,13 @@ A_init()
 B_input(packet)
   struct pkt packet;
 {
+    if(B_status == A_Wait_for_call_from_above){
+        /* extract */
+        struct msg message;
+        extract(packet, &message);
+        /* deliver_data */
+        tolayer5(1, message);
+    }
 }
 
 /* called when B's timer goes off */
@@ -110,6 +166,7 @@ B_timerinterrupt()
 /* entity B routines are called. You can use it to do any initialization */
 B_init()
 {
+    B_status = B_Wait_for_call_from_below;
 }
 
 
