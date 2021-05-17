@@ -46,12 +46,14 @@ struct pkt {
 
 /* A global variables */
 int A_status;
+struct pkt current_sending_pkt;
 
 /* B global variables */
 int B_status;
 
 /* universal global utils */
 #define MODNUM 19260817
+#define DEBUG
 
 /* help functions */
 make_pkt(packet, message)
@@ -75,55 +77,74 @@ make_pkt(packet, message)
     packet->checksum = sum;
 }
 
-extract(packet, message)
+int extract(packet, message)
+/*
+ * return 0: test checksum failed
+ * return 1: test checksum passed
+ */
     struct pkt packet;
     struct msg* message;
 {
-    int i;
+    int i, sum = 0;
+
+    /* test the checksum */
+    for(i = 0; i < 20; i++){
+        sum = (sum + i * (int)packet.payload[i]) % MODNUM;
+    }
+
+    if(sum != packet.checksum){ return 0; }
 
     for(i = 0; i < 20; i++){
         message->data[i] = packet.payload[i];
     }
+    return 1;
 }
 
-test_checksum(message, target_sum)
-    struct msg message;
-    int target_sum;
-{
-    int i, sum = 0;
-    for(i = 0; i < 20; i++){
-        sum = (sum + i * message.data[i]) % MODNUM;
-    }
-    if(sum == target_sum){ return 1; }
-    else{ return 0;}
-}
 
 
 /* called from layer 5, passed the data to be sent to other side */
 A_output(message)
   struct msg message;
 {
-    if(A_status == A_Wait_for_call_from_above){
-    int i, j;
+    int i;
 
-    i=0;
-    j=0;
-
+#ifdef DEBUG
     printf("now in A_output\n");
+#endif
 
-    for (i=0; i< 20; i++)
-    {
-        j = j+ (int) message.data[i];
-
+    if(A_status == A_Wait_for_call_from_above){
+#ifdef DEBUG
+    printf("Contents: ");
+    for(i = 0; i < 20; i++){
+        printf("%c", message.data[i]);
     }
-    printf ("j is %d %d\n", j, (int)('a'));
+    printf("\n");
+#endif
+
     /* make_pkt */
-    struct pkt packet2send;
-    make_pkt(&packet2send, message);
+    struct pkt sndpkt;
+    make_pkt(&sndpkt, message);
+
+    /* copy the packet to manage resend */
+    current_sending_pkt.seqnum = sndpkt.seqnum;
+    current_sending_pkt.acknum = sndpkt.acknum;
+    current_sending_pkt.checksum = sndpkt.checksum;
+    for(i = 0; i < 20; i++){
+        current_sending_pkt.payload[i] = sndpkt.payload[i];
+    }
 
     /* udt_send */
-    tolayer3(0, packet2send);
+    tolayer3(0, sndpkt);
+#ifdef DEBUG
+    printf("packet has been sent to layer3\n");
+#endif
 
+    /* status move */
+    A_status = A_Wait_for_ACK_or_NAK;
+
+    }
+    else if(A_status == A_Wait_for_ACK_or_NAK){
+        /* do nothing */
     }
 
 }
@@ -138,16 +159,32 @@ B_output(message)  /* need be completed only for extra credit */
 A_input(packet)
   struct pkt packet;
 {
-/* stop timer*/
-stoptimer(0);
-/* check if ack is ok*/
+    /* stop timer*/
+//    stoptimer(0);
+#ifdef DEBUG
+    printf("A has received packet\n");
+#endif
 
-/*check if ack no == send no */
-
-	/*if not resent last packet */
-
-	/*if yes increment seq_no and exit */
-
+    if(A_status == A_Wait_for_call_from_above){
+        /* do nothing */
+    }
+    else if(A_status == A_Wait_for_ACK_or_NAK){
+        int isACK = packet.acknum;
+        if(isACK == 0){ /* NAK */
+            /* resend that packet */
+            tolayer3(0, current_sending_pkt);
+#ifdef DEBUG
+printf("get NAK, resend\n");
+#endif
+        }
+        else if(isACK == 1){ /* ACK */
+#ifdef DEBUG
+printf("get ACK\n");
+#endif
+            /* status move */
+            A_status = A_Wait_for_call_from_above;
+        }
+    }
 
 }
 
@@ -170,12 +207,38 @@ A_init()
 B_input(packet)
   struct pkt packet;
 {
-    if(B_status == A_Wait_for_call_from_above){
+#ifdef DEBUG
+printf("B has received packet\n");
+#endif
+    if(B_status == B_Wait_for_call_from_below){
         /* extract */
         struct msg message;
-        extract(packet, &message);
-        /* deliver_data */
-        tolayer5(1, message);
+        struct pkt sndpkt;
+        int test_checksum = extract(packet, &message);
+        if(test_checksum == 0){ /* checksum failed */
+            sndpkt.acknum = 0; /* NAK */
+#ifdef DEBUG
+printf("NAK ");
+#endif
+        }
+        else{
+            /* deliver_data */
+            tolayer5(1, message);
+#ifdef DEBUG
+printf("B deliver to layer5\n");
+#endif
+            sndpkt.acknum = 1; /* ACK */
+#ifdef DEBUG
+printf("ACK ");
+#endif
+        }
+
+        /* udt_send */
+        tolayer3(1, sndpkt);
+#ifdef DEBUG
+if(sndpkt.acknum == 0){ printf("B send NAK to layer3\n"); }
+else { printf("B send ACK to layer3\n"); }
+#endif
     }
 }
 
