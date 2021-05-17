@@ -53,6 +53,7 @@ int B_status;
 
 /* universal global utils */
 #define MODNUM 19260817
+#define BASENUM 114514
 #define DEBUG
 
 /* help functions */
@@ -72,7 +73,7 @@ make_pkt(packet, message)
     /* compute the checksum */
     int sum = 0;
     for(i = 0; i < 20; i++){
-        sum = (sum + i * (int)message.data[i]) % MODNUM;
+        sum = (sum + (i + BASENUM) * (int)message.data[i]) % MODNUM;
     }
     packet->checksum = sum;
 }
@@ -89,7 +90,7 @@ int extract(packet, message)
 
     /* test the checksum */
     for(i = 0; i < 20; i++){
-        sum = (sum + i * (int)packet.payload[i]) % MODNUM;
+        sum = (sum + (i + BASENUM) * (int)packet.payload[i]) % MODNUM;
     }
 
     if(sum != packet.checksum){ return 0; }
@@ -167,22 +168,28 @@ A_input(packet)
 
     if(A_status == A_Wait_for_call_from_above){
         /* do nothing */
+#ifdef DEBUG
+printf("A status: A_Wait_for_call_from_above\n");
+#endif
     }
     else if(A_status == A_Wait_for_ACK_or_NAK){
-        int isACK = packet.acknum;
-        if(isACK == 0){ /* NAK */
-            /* resend that packet */
-            tolayer3(0, current_sending_pkt);
 #ifdef DEBUG
-printf("get NAK, resend\n");
+printf("A status: A_Wait_for_ACK_or_NAK\n");
 #endif
-        }
-        else if(isACK == 1){ /* ACK */
+        int isACK = packet.acknum;
+        if(isACK == 1){ /* ACK */
 #ifdef DEBUG
 printf("get ACK\n");
 #endif
             /* status move */
             A_status = A_Wait_for_call_from_above;
+        }
+        else { /* NAK */
+#ifdef DEBUG
+printf("get NAK, resend\n");
+#endif
+            /* resend that packet */
+            tolayer3(0, current_sending_pkt);
         }
     }
 
