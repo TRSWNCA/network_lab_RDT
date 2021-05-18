@@ -56,11 +56,19 @@ struct pkt current_sending_pkt;
 int B_status;
 
 /* universal global utils */
-#define MODNUM 19260817
-#define BASENUM 114514
+#define MODNUM 19260817     /* for checksum */
+#define BASENUM 114514      /* for checksum */
 #define DEBUG
 
 /* help functions */
+
+/*
+ * make packet from message
+ * para0: sequence number
+ * para1: ack number
+ * para2: packet address
+ * para3: message
+ */
 make_pkt(num, ack, packet, message)
         int num;
         int ack;
@@ -84,11 +92,14 @@ make_pkt(num, ack, packet, message)
     packet->checksum = sum;
 }
 
-int isCorrupt(packet)
+
 /*
- * return 0: corrupt
- * return 1: not corrupt
+ * test checksum function
+ * para: packet to test
+ * return 1: packet corrupt
+ * return 0: packet not corrupt
  */
+int isCorrupt(packet)
     struct pkt packet;
 {
     int i, sum = 0;
@@ -96,10 +107,15 @@ int isCorrupt(packet)
         sum = (sum + ((packet.seqnum + packet.acknum + i + BASENUM) % MODNUM) * (int)packet.payload[i]) % MODNUM;
     }
 
-    if(sum == packet.checksum){ return 1;}
-    else { return 0; }
+    if(sum == packet.checksum){ return 0;}
+    else { return 1; }
 }
 
+/*
+ * extract packet to message
+ * para0: packet
+ * para1: message address
+ */
 extract(packet, message)
     struct pkt packet;
     struct msg* message;
@@ -214,52 +230,60 @@ A_input(packet)
     #endif
 
     if(A_status == A_Wait_for_call_from_above_0){
-        /* do nothing */
         #ifdef DEBUG
-        printf("A status: A_Wait_for_call_from_above_0\n");
+            printf("A status: A_Wait_for_call_from_above_0\n");
         #endif
+        /* do nothing */
     }
     else if(A_status == A_Wait_for_ACK_or_NAK_0){
         #ifdef DEBUG
             printf("A status: A_Wait_for_ACK_or_NAK_0\n");
         #endif
         int isACK = packet.acknum;
-        if(isACK == 1){ /* ACK */
+        int isCorr = isCorrupt(packet);
+
+        if((isCorr == 0) && (isACK == 1)){
+            /* notcorrupt and isACK */
             #ifdef DEBUG
-                printf("get ACK\n");
+                printf("get ACK and ACK packet not corrupt\n");
             #endif
             /* status move */
             A_status = A_Wait_for_call_from_above_1;
         }
-        else { /* NAK */
+        else {
+            /* corrupt or NAK */
             #ifdef DEBUG
-                printf("get NAK, resend\n");
+                printf("get NAK or corrupt, resend\n");
             #endif
             /* resend that packet */
             tolayer3(0, current_sending_pkt);
         }
     }
     else if(A_status == A_Wait_for_call_from_above_1){
-        /* do nothing */
         #ifdef DEBUG
             printf("A status: A_Wait_for_call_from_above_1\n");
         #endif
+        /* do nothing */
     }
     else if(A_status == A_Wait_for_ACK_or_NAK_1){
         #ifdef DEBUG
             printf("A status: A_Wait_for_ACK_or_NAK_1\n");
         #endif
         int isACK = packet.acknum;
-        if(isACK == 1){ /* ACK */
+        int isCorr = isCorrupt(packet);
+
+        if((isCorr == 0) && (isACK == 1)){
+            /* notcorrupt and isACK */
             #ifdef DEBUG
-                printf("get ACK\n");
+                printf("get ACK and ACK packet not corrupt\n");
             #endif
             /* status move */
             A_status = A_Wait_for_call_from_above_0;
         }
-        else { /* NAK */
+        else {
+            /* corrupt or NAK */
             #ifdef DEBUG
-                printf("get NAK, resend\n");
+                printf("get NAK or corrupt, resend\n");
             #endif
             /* resend that packet */
             tolayer3(0, current_sending_pkt);
@@ -294,30 +318,111 @@ B_input(packet)
         /* extract */
         struct msg message;
         struct pkt sndpkt;
-        int test_checksum = extract(packet, &message);
-        if(test_checksum == 0){ /* checksum failed */
-            sndpkt.acknum = 0; /* NAK */
+        extract(packet, &message);
+        /* test checksum for corruption */
+        int isCorr = isCorrupt(packet);
+        /* sequence number */
+        int seqNum = packet.seqnum;
+
+        if((isCorr == 0) && (seqNum == 0)){
+            /* notcorrupt and has_seq0 */
+            /* deliver_data */
             #ifdef DEBUG
-                printf("NAK ");
+            printf("B deliver to layer5\n");
             #endif
+            tolayer5(1, message);
+            /* make_pkt(ACK, checksum) */
+            #ifdef DEBUG
+            printf("notcorrupt and has_seq0, ACK\n");
+            #endif
+            make_pkt(2, 1, &sndpkt, message);
+            /* status change */
+            B_status = B_Wait_for_call_from_below_1;
+        }
+        else if(isCorr == 1){
+            /* corrupt */
+            /* make_pkt(NAK, checksum) */
+            #ifdef DEBUG
+            printf("corrupt, NAK\n");
+            #endif
+            make_pkt(2, 0, &sndpkt, message);
+        }
+        else if((isCorr == 0) && (seqNum == 1)){
+            /* notcorrupt and has_seq1 */
+            /* make_pkt(ACK, checksum) */
+            #ifdef DEBUG
+            printf("notcorrupt and has_seq1, ACK\n");
+            #endif
+            make_pkt(2, 1, &sndpkt, message);
         }
         else{
-            /* deliver_data */
-            tolayer5(1, message);
+            /* unexpected condition */
+            /* send NAK */
             #ifdef DEBUG
-                printf("B deliver to layer5\n");
+            printf("unexpected, NAK\n");
             #endif
-            sndpkt.acknum = 1; /* ACK */
-            #ifdef DEBUG
-                printf("ACK ");
-            #endif
+            make_pkt(2, 0, &sndpkt, message);
         }
 
         /* udt_send */
         tolayer3(1, sndpkt);
         #ifdef DEBUG
-            if(sndpkt.acknum == 0){ printf("B send NAK to layer3\n"); }
-            else { printf("B send ACK to layer3\n"); }
+        printf("B send feedback to layer3\n");
+        #endif
+    }else if(B_status == B_Wait_for_call_from_below_1){
+        /* extract */
+        struct msg message;
+        struct pkt sndpkt;
+        extract(packet, &message);
+        /* test checksum for corruption */
+        int isCorr = isCorrupt(packet);
+        /* sequence number */
+        int seqNum = packet.seqnum;
+
+        if((isCorr == 0) && (seqNum == 1)){
+            /* notcorrupt and has_seq1 */
+            /* deliver_data */
+            #ifdef DEBUG
+            printf("B deliver to layer5\n");
+            #endif
+            tolayer5(1, message);
+            /* make_pkt(ACK, checksum) */
+            #ifdef DEBUG
+            printf("notcorrupt and has_seq1, ACK\n");
+            #endif
+            make_pkt(2, 1, &sndpkt, message);
+            /* status change */
+            B_status = B_Wait_for_call_from_below_0;
+        }
+        else if(isCorr == 1){
+            /* corrupt */
+            /* make_pkt(NAK, checksum) */
+            #ifdef DEBUG
+            printf("corrupt, NAK\n");
+            #endif
+            make_pkt(2, 0, &sndpkt, message);
+        }
+        else if((isCorr == 0) && (seqNum == 0)){
+            /* notcorrupt and has_seq0 */
+            /* make_pkt(ACK, checksum) */
+            #ifdef DEBUG
+            printf("notcorrupt and has_seq0, ACK\n");
+            #endif
+            make_pkt(2, 1, &sndpkt, message);
+        }
+        else{
+            /* unexpected condition */
+            /* send NAK */
+            #ifdef DEBUG
+            printf("unexpected, NAK\n");
+            #endif
+            make_pkt(2, 0, &sndpkt, message);
+        }
+
+        /* udt_send */
+        tolayer3(1, sndpkt);
+        #ifdef DEBUG
+        printf("B send feedback to layer3\n");
         #endif
     }
 }
