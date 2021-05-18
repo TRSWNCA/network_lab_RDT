@@ -20,3 +20,6 @@ add_executable(rdt_2_2
 
 add_executable(rdt_3
         rdt_3.c)
+
+add_executable(stopAndWait
+        RDT_stopAndWait_ver.c)
