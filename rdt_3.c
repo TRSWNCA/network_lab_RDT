@@ -58,6 +58,7 @@ int B_status;
 /* universal global utils */
 #define MODNUM 19260817     /* for checksum */
 #define BASENUM 114514      /* for checksum */
+#define MAXTIME 2500.0
 #define DEBUG
 
 /* help functions */
@@ -136,7 +137,7 @@ A_output(message)
     int i;
 
     #ifdef DEBUG
-        printf("now in A_output\n");
+        printf("A receiver message from above\n");
     #endif
 
     if(A_status == A_Wait_for_call_from_above_0){
@@ -166,12 +167,21 @@ A_output(message)
             printf("packet has been sent to layer3\n");
         #endif
 
+        /* start timer */
+        starttimer(0, MAXTIME);
+        #ifdef DEBUG
+            printf("A start timer\n");
+        #endif
+
         /* status move */
         A_status = A_Wait_for_ACK_0;
 
     }
     else if(A_status == A_Wait_for_ACK_0){
         /* do nothing */
+        #ifdef DEBUG
+            printf("A Wait for ACK0, message dropped\n");
+        #endif
     }
     else if(A_status == A_Wait_for_call_from_above_1){
         #ifdef DEBUG
@@ -200,15 +210,27 @@ A_output(message)
             printf("packet has been sent to layer3\n");
         #endif
 
+        /* start timer */
+        starttimer(0, MAXTIME);
+        #ifdef DEBUG
+            printf("A start timer\n");
+        #endif
+
         /* status move */
         A_status = A_Wait_for_ACK_1;
 
     }
     else if(A_status == A_Wait_for_ACK_1){
         /* do nothing */
+        #ifdef DEBUG
+            printf("A Wait for ACK1, message dropped\n");
+        #endif
     }
     else{
         /* do nothing */
+        #ifdef DEBUG
+            printf("unexpected condition, message dropped\n");
+        #endif
     }
 
 }
@@ -245,18 +267,19 @@ A_input(packet)
         if((isCorr == 0) && (isACK == 0)){
             /* notcorrupt and isACK(0) */
             #ifdef DEBUG
-                printf("get ACK0 and ACK packet not corrupt\n");
+                printf("A get ACK0 and ACK packet not corrupt, stop timer\n");
             #endif
+            /* stop timer */
+            stoptimer(0);
             /* status move */
             A_status = A_Wait_for_call_from_above_1;
         }
         else {
             /* corrupt or ACK1 */
             #ifdef DEBUG
-                printf("get ACK1 or corrupt, resend\n");
+                printf("A get ACK1 or corrupt, wait and do nothing\n");
             #endif
-            /* resend that packet */
-            tolayer3(0, current_sending_pkt);
+            /* do nothing */
         }
     }
     else if(A_status == A_Wait_for_call_from_above_1){
@@ -275,18 +298,19 @@ A_input(packet)
         if((isCorr == 0) && (isACK == 1)){
             /* notcorrupt and isACK */
             #ifdef DEBUG
-                printf("get ACK1 and ACK packet not corrupt\n");
+                printf("A get ACK1 and ACK packet not corrupt, stop timer\n");
             #endif
+            /* stop timer */
+            stoptimer(0);
             /* status move */
             A_status = A_Wait_for_call_from_above_0;
         }
         else {
             /* corrupt or NAK */
             #ifdef DEBUG
-                printf("get ACK0 or corrupt, resend\n");
+                printf("A get ACK0 or corrupt, wait and do nothing\n");
             #endif
-            /* resend that packet */
-            tolayer3(0, current_sending_pkt);
+            /* do nothing */
         }
     }
 
@@ -295,6 +319,14 @@ A_input(packet)
 /* called when A's timer goes off */
 A_timerinterrupt()
 {
+    /* time spire */
+    #ifdef DEBUG
+        printf("A timer spired, resend packet and start timer\n");
+    #endif
+    /* udt send*/
+    tolayer3(0, current_sending_pkt);
+    /* start timer */
+    starttimer(0, MAXTIME);
 }
 
 /* the following routine will be called once (only) before any other */
@@ -407,6 +439,12 @@ B_input(packet)
         tolayer3(1, sndpkt);
         #ifdef DEBUG
         printf("B send feedback to layer3\n");
+        #endif
+    }
+    else{
+        /* unexpected condition */
+        #ifdef DEBUG
+        printf("B in unexpected condition\n");
         #endif
     }
 }
