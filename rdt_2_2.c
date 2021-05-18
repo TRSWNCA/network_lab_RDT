@@ -39,9 +39,9 @@ struct pkt {
 
 /* define A status */
 #define A_Wait_for_call_from_above_0    0
-#define A_Wait_for_ACK_or_NAK_0         1
+#define A_Wait_for_ACK_0                1
 #define A_Wait_for_call_from_above_1    2
-#define A_Wait_for_ACK_or_NAK_1         3
+#define A_Wait_for_ACK_1                3
 
 
 /* define B status */
@@ -167,10 +167,10 @@ A_output(message)
         #endif
 
         /* status move */
-        A_status = A_Wait_for_ACK_or_NAK_0;
+        A_status = A_Wait_for_ACK_0;
 
     }
-    else if(A_status == A_Wait_for_ACK_or_NAK_0){
+    else if(A_status == A_Wait_for_ACK_0){
         /* do nothing */
     }
     else if(A_status == A_Wait_for_call_from_above_1){
@@ -201,10 +201,10 @@ A_output(message)
         #endif
 
         /* status move */
-        A_status = A_Wait_for_ACK_or_NAK_1;
+        A_status = A_Wait_for_ACK_1;
 
     }
-    else if(A_status == A_Wait_for_ACK_or_NAK_1){
+    else if(A_status == A_Wait_for_ACK_1){
         /* do nothing */
     }
     else{
@@ -235,25 +235,25 @@ A_input(packet)
         #endif
         /* do nothing */
     }
-    else if(A_status == A_Wait_for_ACK_or_NAK_0){
+    else if(A_status == A_Wait_for_ACK_0){
         #ifdef DEBUG
-            printf("A status: A_Wait_for_ACK_or_NAK_0\n");
+            printf("A status: A_Wait_for_ACK_0\n");
         #endif
         int isACK = packet.acknum;
         int isCorr = isCorrupt(packet);
 
-        if((isCorr == 0) && (isACK == 1)){
-            /* notcorrupt and isACK */
+        if((isCorr == 0) && (isACK == 0)){
+            /* notcorrupt and isACK(0) */
             #ifdef DEBUG
-                printf("get ACK and ACK packet not corrupt\n");
+                printf("get ACK0 and ACK packet not corrupt\n");
             #endif
             /* status move */
             A_status = A_Wait_for_call_from_above_1;
         }
         else {
-            /* corrupt or NAK */
+            /* corrupt or ACK1 */
             #ifdef DEBUG
-                printf("get NAK or corrupt, resend\n");
+                printf("get ACK1 or corrupt, resend\n");
             #endif
             /* resend that packet */
             tolayer3(0, current_sending_pkt);
@@ -265,9 +265,9 @@ A_input(packet)
         #endif
         /* do nothing */
     }
-    else if(A_status == A_Wait_for_ACK_or_NAK_1){
+    else if(A_status == A_Wait_for_ACK_1){
         #ifdef DEBUG
-            printf("A status: A_Wait_for_ACK_or_NAK_1\n");
+            printf("A status: A_Wait_for_ACK_1\n");
         #endif
         int isACK = packet.acknum;
         int isCorr = isCorrupt(packet);
@@ -275,7 +275,7 @@ A_input(packet)
         if((isCorr == 0) && (isACK == 1)){
             /* notcorrupt and isACK */
             #ifdef DEBUG
-                printf("get ACK and ACK packet not corrupt\n");
+                printf("get ACK1 and ACK packet not corrupt\n");
             #endif
             /* status move */
             A_status = A_Wait_for_call_from_above_0;
@@ -283,7 +283,7 @@ A_input(packet)
         else {
             /* corrupt or NAK */
             #ifdef DEBUG
-                printf("get NAK or corrupt, resend\n");
+                printf("get ACK0 or corrupt, resend\n");
             #endif
             /* resend that packet */
             tolayer3(0, current_sending_pkt);
@@ -331,37 +331,29 @@ B_input(packet)
             printf("B deliver to layer5\n");
             #endif
             tolayer5(1, message);
-            /* make_pkt(ACK, checksum) */
+            /* make_pkt(ACK, 0, checksum) */
             #ifdef DEBUG
-            printf("notcorrupt and has_seq0, ACK\n");
+            printf("notcorrupt and has_seq0, ACK0\n");
             #endif
-            make_pkt(2, 1, &sndpkt, message);
+            make_pkt(2, 0, &sndpkt, message);
             /* status change */
             B_status = B_Wait_for_call_from_below_1;
         }
-        else if(isCorr == 1){
-            /* corrupt */
-            /* make_pkt(NAK, checksum) */
+        else if((isCorr == 1) || (seqNum == 1)){
+            /* corrupt or has_seq1 */
+            /* make_pkt(ACK, 1, checksum) */
             #ifdef DEBUG
-            printf("corrupt, NAK\n");
-            #endif
-            make_pkt(2, 0, &sndpkt, message);
-        }
-        else if((isCorr == 0) && (seqNum == 1)){
-            /* notcorrupt and has_seq1 */
-            /* make_pkt(ACK, checksum) */
-            #ifdef DEBUG
-            printf("notcorrupt and has_seq1, ACK\n");
+            printf("corrupt or has_seq1, ACK1\n");
             #endif
             make_pkt(2, 1, &sndpkt, message);
         }
         else{
             /* unexpected condition */
-            /* send NAK */
+            /* send ACK1 */
             #ifdef DEBUG
-            printf("unexpected, NAK\n");
+            printf("unexpected, ACK1\n");
             #endif
-            make_pkt(2, 0, &sndpkt, message);
+            make_pkt(2, 1, &sndpkt, message);
         }
 
         /* udt_send */
@@ -386,35 +378,27 @@ B_input(packet)
             printf("B deliver to layer5\n");
             #endif
             tolayer5(1, message);
-            /* make_pkt(ACK, checksum) */
+            /* make_pkt(ACK, 1, checksum) */
             #ifdef DEBUG
-            printf("notcorrupt and has_seq1, ACK\n");
+            printf("notcorrupt and has_seq1, ACK1\n");
             #endif
             make_pkt(2, 1, &sndpkt, message);
             /* status change */
             B_status = B_Wait_for_call_from_below_0;
         }
-        else if(isCorr == 1){
-            /* corrupt */
-            /* make_pkt(NAK, checksum) */
+        else if((isCorr == 1) && (seqNum == 0)){
+            /* corrupt or has_seq0 */
+            /* make_pkt(ACK, 0, checksum) */
             #ifdef DEBUG
-            printf("corrupt, NAK\n");
+            printf("corrupt or has_seq0, ACK0\n");
             #endif
             make_pkt(2, 0, &sndpkt, message);
         }
-        else if((isCorr == 0) && (seqNum == 0)){
-            /* notcorrupt and has_seq0 */
-            /* make_pkt(ACK, checksum) */
-            #ifdef DEBUG
-            printf("notcorrupt and has_seq0, ACK\n");
-            #endif
-            make_pkt(2, 1, &sndpkt, message);
-        }
         else{
             /* unexpected condition */
-            /* send NAK */
+            /* send ACK0 */
             #ifdef DEBUG
-            printf("unexpected, NAK\n");
+            printf("unexpected, ACK0\n");
             #endif
             make_pkt(2, 0, &sndpkt, message);
         }
