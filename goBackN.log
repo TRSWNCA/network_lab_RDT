@@ -1,0 +1,892 @@
+D:\Files\network\exp\RDT\cmake-build-debug\goBackN.exe
+-----  Go Back N Network Simulator Version 1.1 --------
+
+Enter the number of messages to simulate:100
+ Enter  packet loss probability [enter 0.0 for no loss]:0.2
+Enter packet corruption
+ probability [0.0 for no corruption]:0.2
+Enter average time between messages from sender's layer5 [ > 0.0]:5
+Enter TRACE:2
+
+EVENT time: 0.467849,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: aaaaaaaaaaaaaaaaaaaa
+packet1 has been sent to layer3
+
+EVENT time: 5.960295,  type: 2, fromlayer3  entity: 1
+B has received packet: 1, isCorr: 0
+B deliver packet1 to layer5
+B send ACK1 to layer3
+
+EVENT time: 8.038575,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: bbbbbbbbbbbbbbbbbbbb
+packet2 has been sent to layer3
+
+EVENT time: 8.459425,  type: 2, fromlayer3  entity: 0
+A has received ACK: 1, corrupt: 0
+A slide window, base: 2, end: 10
+
+EVENT time: 9.439863,  type: 2, fromlayer3  entity: 1
+B has received packet: 2, isCorr: 0
+B deliver packet2 to layer5
+B send ACK2 to layer3
+
+EVENT time: 11.610157,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: cccccccccccccccccccc
+packet3 has been sent to layer3
+
+EVENT time: 14.876553,  type: 2, fromlayer3  entity: 0
+A has received ACK: 2, corrupt: 0
+A slide window, base: 3, end: 11
+
+EVENT time: 15.106327,  type: 2, fromlayer3  entity: 1
+B has received packet: 3, isCorr: 0
+B deliver packet3 to layer5
+B send ACK3 to layer3
+
+EVENT time: 16.664022,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: dddddddddddddddddddd
+packet4 has been sent to layer3
+
+EVENT time: 17.991364,  type: 2, fromlayer3  entity: 0
+A has received ACK: 3, corrupt: 0
+A slide window, base: 4, end: 12
+
+EVENT time: 21.240456,  type: 2, fromlayer3  entity: 1
+B has received packet: 4, isCorr: 0
+B deliver packet4 to layer5
+B send ACK4 to layer3
+
+EVENT time: 25.289469,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: eeeeeeeeeeeeeeeeeeee
+packet5 has been sent to layer3
+
+EVENT time: 28.731651,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: ffffffffffffffffffff
+packet6 has been sent to layer3
+
+EVENT time: 28.795435,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: gggggggggggggggggggg
+          TOLAYER3: packet being lost
+packet7 has been sent to layer3
+
+EVENT time: 29.269722,  type: 2, fromlayer3  entity: 0
+A has received ACK: 4, corrupt: 0
+A slide window, base: 5, end: 13
+
+EVENT time: 30.850857,  type: 2, fromlayer3  entity: 1
+B has received packet: 5, isCorr: 0
+B deliver packet5 to layer5
+B send ACK5 to layer3
+
+EVENT time: 31.855526,  type: 2, fromlayer3  entity: 0
+A has received ACK: 5, corrupt: 0
+A slide window, base: 6, end: 14
+
+EVENT time: 32.483902,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: hhhhhhhhhhhhhhhhhhhh
+packet8 has been sent to layer3
+
+EVENT time: 36.460464,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: iiiiiiiiiiiiiiiiiiii
+          TOLAYER3: packet being lost
+packet9 has been sent to layer3
+
+EVENT time: 36.798424,  type: 2, fromlayer3  entity: 1
+B has received packet: 6, isCorr: 0
+B deliver packet6 to layer5
+          TOLAYER3: packet being corrupted
+B send ACK6 to layer3
+
+EVENT time: 39.976803,  type: 2, fromlayer3  entity: 1
+B has received packet: 8, isCorr: 0
+          TOLAYER3: packet being corrupted
+
+EVENT time: 44.952938,  type: 2, fromlayer3  entity: 0
+A has received ACK: 999999, corrupt: 1
+ACK corrupted
+
+EVENT time: 45.325787,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: jjjjjjjjjjjjjjjjjjjj
+packet10 has been sent to layer3
+
+EVENT time: 49.778133,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: kkkkkkkkkkkkkkkkkkkk
+packet11 has been sent to layer3
+
+EVENT time: 51.855526,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packets in window and start timer
+A resend packet6 to layer3
+A resend packet7 to layer3
+A resend packet8 to layer3
+A resend packet9 to layer3
+          TOLAYER3: packet being corrupted
+A resend packet10 to layer3
+          TOLAYER3: packet being lost
+A resend packet11 to layer3
+
+EVENT time: 53.350933,  type: 2, fromlayer3  entity: 1
+B has received packet: 10, isCorr: 0
+
+EVENT time: 53.724483,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: llllllllllllllllllll
+          TOLAYER3: packet being corrupted
+packet12 has been sent to layer3
+
+EVENT time: 54.587906,  type: 2, fromlayer3  entity: 0
+A has received ACK: 6, corrupt: 1
+ACK corrupted
+
+EVENT time: 55.686638,  type: 2, fromlayer3  entity: 1
+B has received packet: 11, isCorr: 0
+
+EVENT time: 55.748585,  type: 2, fromlayer3  entity: 0
+A has received ACK: 6, corrupt: 0
+A slide window, base: 7, end: 15
+
+EVENT time: 57.292149,  type: 2, fromlayer3  entity: 0
+A has received ACK: 6, corrupt: 0
+A slide window, base: 7, end: 15
+
+EVENT time: 57.491409,  type: 2, fromlayer3  entity: 1
+B has received packet: 6, isCorr: 0
+          TOLAYER3: packet being lost
+
+EVENT time: 61.438648,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: mmmmmmmmmmmmmmmmmmmm
+packet13 has been sent to layer3
+
+EVENT time: 63.187111,  type: 2, fromlayer3  entity: 1
+B has received packet: 7, isCorr: 0
+B deliver packet7 to layer5
+B send ACK7 to layer3
+
+EVENT time: 64.537804,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: nnnnnnnnnnnnnnnnnnnn
+packet14 has been sent to layer3
+
+EVENT time: 65.498833,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 65.706017,  type: 2, fromlayer3  entity: 0
+A has received ACK: 7, corrupt: 0
+A slide window, base: 8, end: 16
+
+EVENT time: 68.734711,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: pppppppppppppppppppp
+packet15 has been sent to layer3
+
+EVENT time: 70.921974,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 71.040863,  type: 2, fromlayer3  entity: 1
+B has received packet: 8, isCorr: 0
+B deliver packet8 to layer5
+          TOLAYER3: packet being corrupted
+B send ACK8 to layer3
+
+EVENT time: 73.567184,  type: 2, fromlayer3  entity: 1
+B has received packet: 9, isCorr: 0
+B deliver packet9 to layer5
+B send ACK9 to layer3
+
+EVENT time: 75.603500,  type: 2, fromlayer3  entity: 1
+B has received packet: 10, isCorr: 1
+          TOLAYER3: packet being corrupted
+
+EVENT time: 78.679779,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 78.907127,  type: 2, fromlayer3  entity: 1
+B has received packet: 12, isCorr: 1
+          TOLAYER3: packet being corrupted
+
+EVENT time: 79.702415,  type: 2, fromlayer3  entity: 0
+A has received ACK: 8, corrupt: 1
+ACK corrupted
+
+EVENT time: 83.609741,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 85.706017,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packets in window and start timer
+          TOLAYER3: packet being corrupted
+A resend packet8 to layer3
+A resend packet9 to layer3
+A resend packet10 to layer3
+          TOLAYER3: packet being lost
+A resend packet11 to layer3
+A resend packet12 to layer3
+A resend packet13 to layer3
+A resend packet14 to layer3
+A resend packet15 to layer3
+
+EVENT time: 86.721733,  type: 2, fromlayer3  entity: 0
+A has received ACK: 9, corrupt: 0
+A slide window, base: 10, end: 18
+
+EVENT time: 86.892921,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: tttttttttttttttttttt
+packet16 has been sent to layer3
+
+EVENT time: 87.619217,  type: 2, fromlayer3  entity: 1
+B has received packet: 13, isCorr: 0
+          TOLAYER3: packet being lost
+
+EVENT time: 88.508102,  type: 2, fromlayer3  entity: 0
+A has received ACK: 9, corrupt: 1
+ACK corrupted
+
+EVENT time: 91.787285,  type: 2, fromlayer3  entity: 0
+A has received ACK: 9, corrupt: 1
+ACK corrupted
+
+EVENT time: 92.301949,  type: 2, fromlayer3  entity: 1
+B has received packet: 14, isCorr: 0
+
+EVENT time: 96.669830,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: uuuuuuuuuuuuuuuuuuuu
+          TOLAYER3: packet being corrupted
+packet17 has been sent to layer3
+
+EVENT time: 96.826195,  type: 2, fromlayer3  entity: 1
+B has received packet: 15, isCorr: 0
+
+EVENT time: 97.160263,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 101.332100,  type: 2, fromlayer3  entity: 0
+A has received ACK: 9, corrupt: 0
+A slide window, base: 10, end: 18
+
+EVENT time: 105.333107,  type: 2, fromlayer3  entity: 1
+B has received packet: 8, isCorr: 1
+          TOLAYER3: packet being corrupted
+
+EVENT time: 105.868706,  type: 2, fromlayer3  entity: 0
+A has received ACK: 9, corrupt: 0
+A slide window, base: 10, end: 18
+
+EVENT time: 106.676163,  type: 2, fromlayer3  entity: 1
+B has received packet: 9, isCorr: 0
+
+EVENT time: 106.832497,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 107.725876,  type: 2, fromlayer3  entity: 1
+B has received packet: 10, isCorr: 0
+B deliver packet10 to layer5
+B send ACK10 to layer3
+
+EVENT time: 110.912895,  type: 2, fromlayer3  entity: 0
+A has received ACK: 9, corrupt: 1
+ACK corrupted
+
+EVENT time: 111.810928,  type: 2, fromlayer3  entity: 1
+B has received packet: 12, isCorr: 0
+
+EVENT time: 112.822189,  type: 2, fromlayer3  entity: 1
+B has received packet: 13, isCorr: 0
+          TOLAYER3: packet being lost
+
+EVENT time: 114.597015,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 115.853348,  type: 2, fromlayer3  entity: 1
+B has received packet: 14, isCorr: 0
+
+EVENT time: 117.461784,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 120.041405,  type: 2, fromlayer3  entity: 1
+B has received packet: 15, isCorr: 0
+          TOLAYER3: packet being corrupted
+
+EVENT time: 120.501442,  type: 2, fromlayer3  entity: 0
+A has received ACK: 9, corrupt: 0
+A slide window, base: 10, end: 18
+
+EVENT time: 123.212341,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 123.930489,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: zzzzzzzzzzzzzzzzzzzz
+          TOLAYER3: packet being corrupted
+packet18 has been sent to layer3
+
+EVENT time: 125.643188,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 126.506355,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 129.976852,  type: 2, fromlayer3  entity: 1
+B has received packet: 16, isCorr: 0
+
+EVENT time: 132.706345,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 134.056961,  type: 2, fromlayer3  entity: 1
+B has received packet: 17, isCorr: 1
+
+EVENT time: 134.263138,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 138.229279,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 1
+ACK corrupted
+
+EVENT time: 142.385345,  type: 2, fromlayer3  entity: 1
+B has received packet: 18, isCorr: 1
+          TOLAYER3: packet being lost
+
+EVENT time: 143.062851,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 145.390320,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 150.210388,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 151.483826,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 151.704468,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 160.950043,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 167.420273,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 170.210388,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packets in window and start timer
+          TOLAYER3: packet being lost
+A resend packet11 to layer3
+          TOLAYER3: packet being lost
+A resend packet12 to layer3
+A resend packet13 to layer3
+          TOLAYER3: packet being lost
+A resend packet14 to layer3
+A resend packet15 to layer3
+A resend packet16 to layer3
+          TOLAYER3: packet being lost
+A resend packet17 to layer3
+          TOLAYER3: packet being lost
+A resend packet18 to layer3
+
+EVENT time: 171.601303,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 176.069519,  type: 2, fromlayer3  entity: 1
+B has received packet: 13, isCorr: 0
+
+EVENT time: 176.999420,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 179.776901,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 180.673141,  type: 2, fromlayer3  entity: 1
+B has received packet: 15, isCorr: 0
+          TOLAYER3: packet being lost
+
+EVENT time: 183.045929,  type: 2, fromlayer3  entity: 1
+B has received packet: 16, isCorr: 0
+
+EVENT time: 185.028839,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 186.399734,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 186.448563,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 186.965912,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 193.983582,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 200.838959,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 202.381058,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 202.967926,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 206.965912,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packets in window and start timer
+          TOLAYER3: packet being lost
+A resend packet11 to layer3
+          TOLAYER3: packet being corrupted
+A resend packet12 to layer3
+A resend packet13 to layer3
+A resend packet14 to layer3
+A resend packet15 to layer3
+A resend packet16 to layer3
+A resend packet17 to layer3
+A resend packet18 to layer3
+
+EVENT time: 208.953217,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 212.043213,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 212.574265,  type: 2, fromlayer3  entity: 1
+B has received packet: 12, isCorr: 1
+          TOLAYER3: packet being lost
+
+EVENT time: 214.737473,  type: 2, fromlayer3  entity: 1
+B has received packet: 13, isCorr: 0
+
+EVENT time: 217.960449,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 219.498581,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 220.455139,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 220.629593,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 222.292938,  type: 2, fromlayer3  entity: 1
+B has received packet: 14, isCorr: 0
+
+EVENT time: 230.214264,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 230.418106,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 230.647141,  type: 2, fromlayer3  entity: 1
+B has received packet: 15, isCorr: 0
+
+EVENT time: 234.789047,  type: 2, fromlayer3  entity: 1
+B has received packet: 16, isCorr: 0
+          TOLAYER3: packet being corrupted
+
+EVENT time: 236.537033,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 236.806244,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 237.891083,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 1
+ACK corrupted
+
+EVENT time: 239.033951,  type: 2, fromlayer3  entity: 1
+B has received packet: 17, isCorr: 0
+          TOLAYER3: packet being lost
+
+EVENT time: 239.888306,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 243.669250,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 245.044724,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 247.358215,  type: 2, fromlayer3  entity: 1
+B has received packet: 18, isCorr: 0
+          TOLAYER3: packet being lost
+
+EVENT time: 254.198135,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 255.366074,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 256.537048,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packets in window and start timer
+          TOLAYER3: packet being corrupted
+A resend packet11 to layer3
+A resend packet12 to layer3
+          TOLAYER3: packet being lost
+A resend packet13 to layer3
+A resend packet14 to layer3
+A resend packet15 to layer3
+          TOLAYER3: packet being lost
+A resend packet16 to layer3
+A resend packet17 to layer3
+A resend packet18 to layer3
+
+EVENT time: 263.071075,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 264.848389,  type: 2, fromlayer3  entity: 1
+B has received packet: 11, isCorr: 1
+
+EVENT time: 267.462616,  type: 2, fromlayer3  entity: 1
+B has received packet: 12, isCorr: 0
+
+EVENT time: 267.536530,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 272.164612,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 273.550537,  type: 2, fromlayer3  entity: 1
+B has received packet: 14, isCorr: 0
+
+EVENT time: 274.483154,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 276.745728,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 282.797668,  type: 2, fromlayer3  entity: 1
+B has received packet: 15, isCorr: 0
+          TOLAYER3: packet being corrupted
+
+EVENT time: 282.974609,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 285.403717,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 287.374390,  type: 2, fromlayer3  entity: 1
+B has received packet: 17, isCorr: 0
+
+EVENT time: 287.704987,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+
+EVENT time: 287.927307,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 1
+ACK corrupted
+
+EVENT time: 291.396210,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 292.175507,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 293.934204,  type: 2, fromlayer3  entity: 1
+B has received packet: 18, isCorr: 0
+
+EVENT time: 298.753906,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 299.822449,  type: 2, fromlayer3  entity: 0
+A has received ACK: 10, corrupt: 0
+A slide window, base: 11, end: 19
+
+EVENT time: 302.886108,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 308.605286,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 310.116272,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 313.527008,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 315.615082,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 316.935608,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 319.822449,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packets in window and start timer
+A resend packet11 to layer3
+A resend packet12 to layer3
+A resend packet13 to layer3
+A resend packet14 to layer3
+A resend packet15 to layer3
+          TOLAYER3: packet being lost
+A resend packet16 to layer3
+          TOLAYER3: packet being lost
+A resend packet17 to layer3
+          TOLAYER3: packet being corrupted
+A resend packet18 to layer3
+
+EVENT time: 324.583862,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 326.148865,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 326.810181,  type: 2, fromlayer3  entity: 1
+B has received packet: 11, isCorr: 0
+B deliver packet11 to layer5
+B send ACK11 to layer3
+
+EVENT time: 327.862366,  type: 2, fromlayer3  entity: 0
+A has received ACK: 11, corrupt: 0
+A slide window, base: 12, end: 20
+
+EVENT time: 328.598877,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: rrrrrrrrrrrrrrrrrrrr
+packet19 has been sent to layer3
+
+EVENT time: 332.224060,  type: 2, fromlayer3  entity: 1
+B has received packet: 12, isCorr: 0
+B deliver packet12 to layer5
+          TOLAYER3: packet being corrupted
+B send ACK12 to layer3
+
+EVENT time: 336.778748,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 337.849182,  type: 2, fromlayer3  entity: 0
+A has received ACK: 999999, corrupt: 1
+ACK corrupted
+
+EVENT time: 341.858856,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 341.862061,  type: 2, fromlayer3  entity: 1
+B has received packet: 13, isCorr: 0
+B deliver packet13 to layer5
+          TOLAYER3: packet being lost
+B send ACK13 to layer3
+
+EVENT time: 343.899323,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 347.862366,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packets in window and start timer
+          TOLAYER3: packet being corrupted
+A resend packet12 to layer3
+          TOLAYER3: packet being corrupted
+A resend packet13 to layer3
+A resend packet14 to layer3
+A resend packet15 to layer3
+          TOLAYER3: packet being lost
+A resend packet16 to layer3
+A resend packet17 to layer3
+          TOLAYER3: packet being lost
+A resend packet18 to layer3
+A resend packet19 to layer3
+
+EVENT time: 351.593719,  type: 2, fromlayer3  entity: 1
+B has received packet: 14, isCorr: 0
+B deliver packet14 to layer5
+B send ACK14 to layer3
+
+EVENT time: 351.833527,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 353.360687,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 355.694427,  type: 2, fromlayer3  entity: 1
+B has received packet: 15, isCorr: 0
+B deliver packet15 to layer5
+          TOLAYER3: packet being lost
+B send ACK15 to layer3
+
+EVENT time: 359.048309,  type: 2, fromlayer3  entity: 1
+B has received packet: 18, isCorr: 1
+
+EVENT time: 360.136719,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 361.149017,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 361.165253,  type: 2, fromlayer3  entity: 0
+A has received ACK: 14, corrupt: 0
+A slide window, base: 15, end: 23
+
+EVENT time: 363.816650,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: zzzzzzzzzzzzzzzzzzzz
+packet20 has been sent to layer3
+
+EVENT time: 368.113068,  type: 2, fromlayer3  entity: 1
+B has received packet: 19, isCorr: 0
+
+EVENT time: 368.260132,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: aaaaaaaaaaaaaaaaaaaa
+packet21 has been sent to layer3
+
+EVENT time: 368.832367,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: bbbbbbbbbbbbbbbbbbbb
+packet22 has been sent to layer3
+
+EVENT time: 370.798859,  type: 2, fromlayer3  entity: 0
+A has received ACK: 15, corrupt: 0
+A slide window, base: 16, end: 24
+
+EVENT time: 371.282379,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer still available, buffer message first
+Message contents: cccccccccccccccccccc
+          TOLAYER3: packet being lost
+packet23 has been sent to layer3
+
+EVENT time: 371.494141,  type: 2, fromlayer3  entity: 1
+B has received packet: 12, isCorr: 1
+
+EVENT time: 371.562225,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 372.425598,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 372.472900,  type: 2, fromlayer3  entity: 0
+A has received ACK: 15, corrupt: 0
+A slide window, base: 16, end: 24
+
+EVENT time: 376.440399,  type: 2, fromlayer3  entity: 0
+A has received ACK: 15, corrupt: 0
+A slide window, base: 16, end: 24
+
+EVENT time: 377.524384,  type: 2, fromlayer3  entity: 1
+B has received packet: 13, isCorr: 1
+          TOLAYER3: packet being corrupted
+
+EVENT time: 378.804565,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 378.879791,  type: 2, fromlayer3  entity: 0
+A has received ACK: 15, corrupt: 1
+ACK corrupted
+
+EVENT time: 381.174622,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 381.470459,  type: 2, fromlayer3  entity: 1
+B has received packet: 14, isCorr: 0
+          TOLAYER3: packet being corrupted
+
+EVENT time: 383.284363,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 385.975220,  type: 2, fromlayer3  entity: 0
+A has received ACK: 999999, corrupt: 1
+ACK corrupted
+
+EVENT time: 389.439636,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 391.131287,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 391.448761,  type: 2, fromlayer3  entity: 1
+B has received packet: 15, isCorr: 0
+
+EVENT time: 393.905121,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 394.132202,  type: 2, fromlayer3  entity: 0
+A has received ACK: 15, corrupt: 0
+A slide window, base: 16, end: 24
+
+EVENT time: 399.322296,  type: 2, fromlayer3  entity: 1
+B has received packet: 17, isCorr: 0
+
+EVENT time: 401.132019,  type: 2, fromlayer3  entity: 0
+A has received ACK: 15, corrupt: 0
+A slide window, base: 16, end: 24
+
+EVENT time: 403.434235,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 409.314331,  type: 2, fromlayer3  entity: 1
+B has received packet: 19, isCorr: 0
+          TOLAYER3: packet being lost
+
+EVENT time: 411.843597,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 412.874817,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 413.135986,  type: 2, fromlayer3  entity: 1
+B has received packet: 20, isCorr: 0
+
+EVENT time: 416.280060,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 417.116119,  type: 2, fromlayer3  entity: 1
+B has received packet: 21, isCorr: 0
+
+EVENT time: 420.455505,  type: 2, fromlayer3  entity: 0
+A has received ACK: 15, corrupt: 0
+A slide window, base: 16, end: 24
+
+EVENT time: 422.308350,  type: 2, fromlayer3  entity: 1
+B has received packet: 22, isCorr: 0
+
+EVENT time: 422.563812,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 423.103790,  type: 2, fromlayer3  entity: 0
+A has received ACK: 15, corrupt: 0
+A slide window, base: 16, end: 24
+
+EVENT time: 423.219055,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 430.219696,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 430.313995,  type: 2, fromlayer3  entity: 0
+A has received ACK: 15, corrupt: 0
+A slide window, base: 16, end: 24
+
+EVENT time: 433.723541,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 438.479248,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 440.059814,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 445.827209,  type: 1, fromlayer5  entity: 0
+A receive message from above, sender buffer full, drop message
+
+EVENT time: 450.313995,  type: 0, timerinterrupt   entity: 0
+ Simulator terminated at time 450.313995
+ after sending 100 msgs from layer5
+
+Process finished with exit code 0
