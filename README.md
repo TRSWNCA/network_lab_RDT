@@ -4,10 +4,11 @@ RDT/
 ├── CMakeLists.txt                  #CMakeLists
 ├── README.md                       #info
 ├── cmake-build-debug               #CMake Build
-├── doc                             #实验手册以及实验报告
+├── doc                             #实验报告
 ├── log                             #运行结果
 │   ├── goBackN.log                 #Go-Back-N运行结果
 │   └── stopAndWait.log             #Stop-and-Wait运行结果
+├── manual                          #实验手册
 └── src                             #源文件
     ├── RDT_goBackN_ver.c           #RDT: Go-Back-N实现
     ├── RDT_stopAndWait_ver.c       #RDT: Stop-and-Wait实现
