@@ -58,7 +58,7 @@ int B_status;
 /* universal global utils */
 #define MODNUM 19260817     /* for checksum */
 #define BASENUM 114514      /* for checksum */
-#define MAXTIME 500.0
+#define MAXTIME 100.0
 #define DEBUG
 
 /* help functions */
