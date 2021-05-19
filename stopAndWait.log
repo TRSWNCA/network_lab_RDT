@@ -76,25 +76,25 @@ A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK0 or corrupt, wait and do nothing
 
-EVENT time: 3832.804199,  type: 0, timerinterrupt   entity: 0
+EVENT time: 3432.804199,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 3838.365479,  type: 2, fromlayer3  entity: 1
+EVENT time: 3438.365479,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
           TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 4332.804199,  type: 0, timerinterrupt   entity: 0
+EVENT time: 3532.804199,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 4338.751953,  type: 2, fromlayer3  entity: 1
+EVENT time: 3538.751709,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 4340.949707,  type: 2, fromlayer3  entity: 0
+EVENT time: 3540.949463,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
@@ -120,30 +120,30 @@ A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 5557.893555,  type: 0, timerinterrupt   entity: 0
+EVENT time: 5157.893555,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 5559.813477,  type: 2, fromlayer3  entity: 1
+EVENT time: 5159.813477,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
           TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 5569.448242,  type: 2, fromlayer3  entity: 0
+EVENT time: 5169.448242,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 6057.893555,  type: 0, timerinterrupt   entity: 0
+EVENT time: 5257.893555,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 6063.975098,  type: 2, fromlayer3  entity: 1
+EVENT time: 5263.975098,  type: 2, fromlayer3  entity: 1
 B has received packet
 unexpected, ACK0
 B send feedback to layer3
 
-EVENT time: 6068.526855,  type: 2, fromlayer3  entity: 0
+EVENT time: 5268.526855,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
@@ -165,2015 +165,3078 @@ A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK0 or corrupt, wait and do nothing
 
+EVENT time: 6657.268066,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 6665.121582,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 6757.268066,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 6766.791992,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
 EVENT time: 6854.091309,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 A Wait for ACK1, message dropped
 
-EVENT time: 7057.268066,  type: 0, timerinterrupt   entity: 0
+EVENT time: 6857.268066,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 7060.134277,  type: 2, fromlayer3  entity: 1
+EVENT time: 6858.428711,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 7557.268066,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 7566.791992,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 8057.268066,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 8552.751953,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 8557.267578,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 9057.267578,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 9065.209961,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
           TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 9066.925781,  type: 2, fromlayer3  entity: 0
+EVENT time: 6862.625000,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK0 or corrupt, wait and do nothing
 
-EVENT time: 9557.267578,  type: 0, timerinterrupt   entity: 0
+EVENT time: 6957.268066,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
           TOLAYER3: packet being lost
 
-EVENT time: 9666.799805,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 10057.267578,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 10557.267578,  type: 0, timerinterrupt   entity: 0
+EVENT time: 7057.268066,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 10563.185547,  type: 2, fromlayer3  entity: 1
+EVENT time: 7058.811523,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
-          TOLAYER3: packet being corrupted
+          TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 10570.580078,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 10800.623047,  type: 1, fromlayer5  entity: 0
+EVENT time: 7079.500977,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 A Wait for ACK1, message dropped
 
-EVENT time: 10992.829102,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 11057.267578,  type: 0, timerinterrupt   entity: 0
+EVENT time: 7157.268066,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 11065.474609,  type: 2, fromlayer3  entity: 1
+EVENT time: 7165.979980,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 11075.240234,  type: 2, fromlayer3  entity: 0
+EVENT time: 7168.499023,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 12972.198242,  type: 1, fromlayer5  entity: 0
+EVENT time: 7699.332031,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: mmmmmmmmmmmmmmmmmmmm
+Contents: jjjjjjjjjjjjjjjjjjjj
 packet has been sent to layer3
 A start timer
 
-EVENT time: 12975.738281,  type: 2, fromlayer3  entity: 1
+EVENT time: 7704.014648,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
-          TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 13472.198242,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 13477.937500,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 13484.306641,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 13972.198242,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 13977.634766,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 13978.661133,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 14117.679688,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 14472.198242,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 14474.145508,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-B send feedback to layer3
-
-EVENT time: 14475.488281,  type: 2, fromlayer3  entity: 0
+EVENT time: 7706.983398,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 15326.823242,  type: 1, fromlayer5  entity: 0
+EVENT time: 7891.537598,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: oooooooooooooooooooo
+Contents: kkkkkkkkkkkkkkkkkkkk
+          TOLAYER3: packet being corrupted
+packet has been sent to layer3
+A start timer
+
+EVENT time: 7899.519531,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 7991.537598,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 7997.276855,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 8003.645996,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 8091.537598,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 8096.974609,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 8098.001465,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 8191.537598,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 8200.043945,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 8201.386719,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 8674.703125,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: llllllllllllllllllll
           TOLAYER3: packet being lost
 packet has been sent to layer3
 A start timer
 
-EVENT time: 15826.823242,  type: 0, timerinterrupt   entity: 0
+EVENT time: 8774.703125,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 15828.154297,  type: 2, fromlayer3  entity: 1
+EVENT time: 8776.034180,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 8784.208008,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 10300.729492,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: mmmmmmmmmmmmmmmmmmmm
+          TOLAYER3: packet being corrupted
+packet has been sent to layer3
+A start timer
+
+EVENT time: 10303.232422,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+A Wait for ACK1, message dropped
+
+EVENT time: 10305.406250,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 10308.949219,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 10400.729492,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 10410.665039,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 10500.729492,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 10509.759766,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 10600.729492,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 10604.809570,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 10609.345703,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 10700.729492,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 10705.773438,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 10715.362305,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 10911.771484,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: oooooooooooooooooooo
+packet has been sent to layer3
+A start timer
+
+EVENT time: 10914.482422,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 10917.776367,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 12464.675781,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: pppppppppppppppppppp
+packet has been sent to layer3
+A start timer
+
+EVENT time: 12468.498047,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 15836.328125,  type: 2, fromlayer3  entity: 0
+EVENT time: 12475.320313,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 16952.849609,  type: 1, fromlayer5  entity: 0
+EVENT time: 12550.982422,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: pppppppppppppppppppp
-          TOLAYER3: packet being corrupted
+Contents: qqqqqqqqqqqqqqqqqqqq
+          TOLAYER3: packet being lost
 packet has been sent to layer3
 A start timer
 
-EVENT time: 16955.351563,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
+EVENT time: 12650.982422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
 
-EVENT time: 16957.527344,  type: 2, fromlayer3  entity: 1
+EVENT time: 12750.982422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 12850.982422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 12859.310547,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 16961.070313,  type: 2, fromlayer3  entity: 0
+EVENT time: 12865.661133,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 17452.849609,  type: 0, timerinterrupt   entity: 0
+EVENT time: 12950.982422,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 17462.785156,  type: 2, fromlayer3  entity: 1
+EVENT time: 12960.371094,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 12969.291016,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 13050.982422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 13150.982422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 13157.805664,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
           TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 17563.890625,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
+EVENT time: 13250.982422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
 
-EVENT time: 17952.849609,  type: 0, timerinterrupt   entity: 0
+EVENT time: 13350.982422,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
           TOLAYER3: packet being corrupted
 
-EVENT time: 17957.464844,  type: 2, fromlayer3  entity: 1
+EVENT time: 13356.841797,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq0, ACK0
 B send feedback to layer3
 
-EVENT time: 17958.828125,  type: 2, fromlayer3  entity: 0
+EVENT time: 13361.445313,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 18863.552734,  type: 1, fromlayer5  entity: 0
+EVENT time: 13556.079102,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: rrrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 13656.079102,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 13657.600586,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 13661.307617,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 13756.079102,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 13757.625977,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 13761.059570,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 13856.079102,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 13863.249023,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 13865.727539,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 15166.357422,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: ssssssssssssssssssss
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 15266.357422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 15271.544922,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 15279.100586,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 15366.357422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 15374.711914,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 15384.705078,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 15466.357422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 15476.085938,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 15479.867188,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 15566.357422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 15666.357422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 15672.075195,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 15766.357422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 15769.905273,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 15776.654297,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 16190.436523,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: tttttttttttttttttttt
+          TOLAYER3: packet being corrupted
+packet has been sent to layer3
+A start timer
+
+EVENT time: 16197.355469,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 16201.128906,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 16290.436523,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 16390.437500,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 16392.691406,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 16401.001953,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 16490.437500,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 16493.050781,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 16590.437500,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 16596.525391,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 16603.835938,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 17277.078125,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: uuuuuuuuuuuuuuuuuuuu
+packet has been sent to layer3
+A start timer
+
+EVENT time: 17282.839844,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 17287.859375,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 18071.902344,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: vvvvvvvvvvvvvvvvvvvv
+packet has been sent to layer3
+A start timer
+
+EVENT time: 18076.238281,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 18083.490234,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 18171.902344,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 18180.544922,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 18271.902344,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 18371.902344,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 18471.902344,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 18476.187500,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 18480.509766,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 19475.509766,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: wwwwwwwwwwwwwwwwwwww
+packet has been sent to layer3
+A start timer
+
+EVENT time: 19478.957031,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 19481.316406,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 20903.226563,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: xxxxxxxxxxxxxxxxxxxx
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 21003.226563,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 21006.144531,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 21015.554688,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 21320.841797,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: yyyyyyyyyyyyyyyyyyyy
+packet has been sent to layer3
+A start timer
+
+EVENT time: 21330.480469,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 21340.212891,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 22759.972656,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: zzzzzzzzzzzzzzzzzzzz
+          TOLAYER3: packet being corrupted
+packet has been sent to layer3
+A start timer
+
+EVENT time: 22766.390625,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 22769.744141,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 22859.972656,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 22959.972656,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 22963.425781,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 22967.841797,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 23059.972656,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 23063.257813,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 23159.972656,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 23165.544922,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 23169.316406,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 23575.121094,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: aaaaaaaaaaaaaaaaaaaa
+          TOLAYER3: packet being corrupted
+packet has been sent to layer3
+A start timer
+
+EVENT time: 23581.150391,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 23585.095703,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 23675.121094,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 23685.099609,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 23692.972656,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 23775.121094,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 23875.121094,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 23885.113281,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 23894.685547,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 24971.160156,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: bbbbbbbbbbbbbbbbbbbb
+packet has been sent to layer3
+A start timer
+
+EVENT time: 24972.558594,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 24977.298828,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 25071.160156,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 25075.447266,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 25084.453125,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 25171.160156,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 25271.160156,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 25275.140625,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 25276.589844,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+A Wait for ACK1, message dropped
+
+EVENT time: 25281.275391,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 26452.345703,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: dddddddddddddddddddd
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 26508.316406,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+A Wait for ACK0, message dropped
+
+EVENT time: 26552.345703,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 26558.005859,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 26559.361328,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 26652.345703,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 26655.244141,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 26657.646484,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 28075.015625,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: ffffffffffffffffffff
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 28175.015625,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 28181.572266,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 28185.169922,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 28275.015625,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 28276.791016,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 28284.111328,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 28375.015625,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 28381.601563,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 28388.812500,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 28475.015625,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 28575.015625,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 28579.169922,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 28675.015625,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 28680.531250,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 28775.015625,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 28782.037109,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 28790.244141,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 28875.015625,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 28975.015625,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 28976.982422,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 28983.478516,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 29306.070313,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: gggggggggggggggggggg
+          TOLAYER3: packet being corrupted
+packet has been sent to layer3
+A start timer
+
+EVENT time: 29308.896484,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 29316.462891,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 29406.070313,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 29506.070313,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 29513.705078,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 29606.070313,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 29613.496094,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 29614.724609,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 29706.070313,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 29710.353516,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 29711.476563,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 29958.982422,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: hhhhhhhhhhhhhhhhhhhh
+packet has been sent to layer3
+A start timer
+
+EVENT time: 29966.097656,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 30058.982422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 30065.496094,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 30068.474609,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 30158.982422,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 30162.785156,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 30170.886719,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 31504.683594,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: iiiiiiiiiiiiiiiiiiii
+packet has been sent to layer3
+A start timer
+
+EVENT time: 31514.253906,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 31521.632813,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 31799.919922,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: jjjjjjjjjjjjjjjjjjjj
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 31899.919922,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 31904.019531,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 31905.814453,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 31999.919922,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 32099.919922,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 32104.707031,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 32199.919922,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 32203.080078,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 32299.919922,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 32303.414063,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 32308.375000,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 33660.207031,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: kkkkkkkkkkkkkkkkkkkk
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 33760.207031,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 33764.691406,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 33860.207031,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 33960.207031,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 33963.667969,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 33968.542969,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 34060.207031,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 34064.230469,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 34160.207031,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 34162.269531,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 34166.593750,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 35559.558594,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: llllllllllllllllllll
+          TOLAYER3: packet being corrupted
+packet has been sent to layer3
+A start timer
+
+EVENT time: 35569.464844,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 35577.683594,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 35659.558594,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 35661.511719,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 35671.359375,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 35759.558594,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 35764.433594,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 35770.066406,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 36330.945313,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: mmmmmmmmmmmmmmmmmmmm
+          TOLAYER3: packet being corrupted
+packet has been sent to layer3
+A start timer
+
+EVENT time: 36340.132813,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 36345.214844,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 36430.945313,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 36438.976563,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 36440.648438,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 36633.503906,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: nnnnnnnnnnnnnnnnnnnn
+packet has been sent to layer3
+A start timer
+
+EVENT time: 36639.496094,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 36644.285156,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 36733.503906,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 36743.148438,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 36747.039063,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 38198.617188,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: oooooooooooooooooooo
+packet has been sent to layer3
+A start timer
+
+EVENT time: 38200.156250,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 38207.847656,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 38970.492188,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: pppppppppppppppppppp
+packet has been sent to layer3
+A start timer
+
+EVENT time: 38978.093750,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 39070.492188,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 39078.726563,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 39082.476563,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 40841.703125,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: qqqqqqqqqqqqqqqqqqqq
+packet has been sent to layer3
+A start timer
+
+EVENT time: 40843.609375,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 40850.597656,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 40945.832031,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: rrrrrrrrrrrrrrrrrrrr
+packet has been sent to layer3
+A start timer
+
+EVENT time: 40953.062500,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 40954.144531,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 42232.675781,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: ssssssssssssssssssss
 packet has been sent to layer3
 A start timer
 
-EVENT time: 18866.412109,  type: 2, fromlayer3  entity: 1
+EVENT time: 42239.867188,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 42240.980469,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 42332.675781,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 42432.675781,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 42532.675781,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 42539.750000,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 42542.937500,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 43064.609375,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: tttttttttttttttttttt
+packet has been sent to layer3
+A start timer
+
+EVENT time: 43074.542969,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
-          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 18871.457031,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 19363.552734,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 19373.140625,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 19377.626953,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 19668.265625,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 19863.552734,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 19871.132813,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 19877.332031,  type: 2, fromlayer3  entity: 0
+EVENT time: 43079.601563,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 21097.447266,  type: 1, fromlayer5  entity: 0
+EVENT time: 44046.023438,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: uuuuuuuuuuuuuuuuuuuu
           TOLAYER3: packet being corrupted
 packet has been sent to layer3
 A start timer
 
-EVENT time: 21102.970703,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 21597.447266,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 21605.775391,  type: 2, fromlayer3  entity: 1
+EVENT time: 44053.558594,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 21612.125000,  type: 2, fromlayer3  entity: 0
+EVENT time: 44059.730469,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 22097.447266,  type: 0, timerinterrupt   entity: 0
+EVENT time: 44146.023438,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 44153.429688,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 44160.718750,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 44246.023438,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 22106.835938,  type: 2, fromlayer3  entity: 1
+EVENT time: 44247.902344,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
           TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 22115.755859,  type: 2, fromlayer3  entity: 0
+EVENT time: 44253.109375,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 22391.187500,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 22435.316406,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 22597.447266,  type: 0, timerinterrupt   entity: 0
+EVENT time: 44346.023438,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
           TOLAYER3: packet being corrupted
 
-EVENT time: 22602.210938,  type: 2, fromlayer3  entity: 1
+EVENT time: 44350.160156,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq0, ACK0
-          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 22608.070313,  type: 2, fromlayer3  entity: 0
+EVENT time: 44357.464844,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 24284.433594,  type: 1, fromlayer5  entity: 0
+EVENT time: 45274.148438,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: xxxxxxxxxxxxxxxxxxxx
+Contents: vvvvvvvvvvvvvvvvvvvv
+          TOLAYER3: packet being lost
 packet has been sent to layer3
 A start timer
 
-EVENT time: 24293.130859,  type: 2, fromlayer3  entity: 1
+EVENT time: 45374.148438,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 45378.042969,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 45383.675781,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 45474.148438,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 45477.093750,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
           TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 24784.433594,  type: 0, timerinterrupt   entity: 0
+EVENT time: 45574.148438,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 45674.148438,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 45774.148438,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 45776.835938,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 45781.812500,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 45874.148438,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 45974.148438,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
           TOLAYER3: packet being corrupted
 
-EVENT time: 24785.955078,  type: 2, fromlayer3  entity: 1
+EVENT time: 45983.101563,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 24789.662109,  type: 2, fromlayer3  entity: 0
+EVENT time: 45986.957031,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 25061.251953,  type: 1, fromlayer5  entity: 0
+EVENT time: 45996.523438,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: wwwwwwwwwwwwwwwwwwww
+packet has been sent to layer3
+A start timer
+
+EVENT time: 46006.265625,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 46009.519531,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 46198.371094,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: xxxxxxxxxxxxxxxxxxxx
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 46298.371094,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 46398.371094,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 46402.343750,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 46409.828125,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 46498.371094,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 46598.371094,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 46698.371094,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 46798.371094,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 46898.371094,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 46903.464844,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 46907.355469,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 47612.171875,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: yyyyyyyyyyyyyyyyyyyy
           TOLAYER3: packet being lost
 packet has been sent to layer3
 A start timer
 
-EVENT time: 25561.251953,  type: 0, timerinterrupt   entity: 0
+EVENT time: 47712.171875,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
 
-EVENT time: 25565.171875,  type: 2, fromlayer3  entity: 1
+EVENT time: 47719.429688,  type: 2, fromlayer3  entity: 1
 B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being lost
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 26061.251953,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 26068.421875,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 26070.900391,  type: 2, fromlayer3  entity: 0
+EVENT time: 47724.980469,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 26561.251953,  type: 0, timerinterrupt   entity: 0
+EVENT time: 47812.171875,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 26563.843750,  type: 2, fromlayer3  entity: 1
+EVENT time: 47813.355469,  type: 2, fromlayer3  entity: 1
 B has received packet
-B deliver to layer5
-notcorrupt and has_seq0, ACK0
+unexpected, ACK0
 B send feedback to layer3
 
-EVENT time: 26566.007813,  type: 2, fromlayer3  entity: 0
+EVENT time: 47815.449219,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 26667.136719,  type: 1, fromlayer5  entity: 0
+EVENT time: 47972.472656,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: zzzzzzzzzzzzzzzzzzzz
 packet has been sent to layer3
 A start timer
 
-EVENT time: 26673.843750,  type: 2, fromlayer3  entity: 1
+EVENT time: 47978.496094,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 26677.011719,  type: 2, fromlayer3  entity: 0
+EVENT time: 47985.886719,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 27614.796875,  type: 1, fromlayer5  entity: 0
+EVENT time: 49347.148438,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: aaaaaaaaaaaaaaaaaaaa
+          TOLAYER3: packet being corrupted
 packet has been sent to layer3
 A start timer
 
-EVENT time: 27622.332031,  type: 2, fromlayer3  entity: 1
+EVENT time: 49351.019531,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 49353.402344,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 49447.148438,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 49448.656250,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 49547.148438,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 49647.148438,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 49747.148438,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 49750.460938,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
 B send feedback to layer3
 
-EVENT time: 27625.398438,  type: 2, fromlayer3  entity: 0
+EVENT time: 49754.109375,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 28313.000000,  type: 1, fromlayer5  entity: 0
+EVENT time: 50967.804688,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: bbbbbbbbbbbbbbbbbbbb
-          TOLAYER3: packet being corrupted
 packet has been sent to layer3
 A start timer
 
-EVENT time: 28319.326172,  type: 2, fromlayer3  entity: 1
+EVENT time: 50970.269531,  type: 2, fromlayer3  entity: 1
 B has received packet
-unexpected, ACK0
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 50978.136719,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 52323.375000,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: cccccccccccccccccccc
+packet has been sent to layer3
+A start timer
+
+EVENT time: 52333.085938,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 52338.953125,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 53548.816406,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: dddddddddddddddddddd
+packet has been sent to layer3
+A start timer
+
+EVENT time: 53552.488281,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
           TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 28322.208984,  type: 2, fromlayer3  entity: 0
+EVENT time: 53562.320313,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK0 or corrupt, wait and do nothing
 
-EVENT time: 28813.000000,  type: 0, timerinterrupt   entity: 0
+EVENT time: 53648.816406,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 28816.548828,  type: 2, fromlayer3  entity: 1
+EVENT time: 53654.667969,  type: 2, fromlayer3  entity: 1
 B has received packet
-B deliver to layer5
-notcorrupt and has_seq1, ACK1
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 28823.298828,  type: 2, fromlayer3  entity: 0
+EVENT time: 53659.500000,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 53748.816406,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 53758.093750,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 53762.085938,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 29494.859375,  type: 1, fromlayer5  entity: 0
+EVENT time: 53978.882813,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: cccccccccccccccccccc
-          TOLAYER3: packet being corrupted
+Contents: eeeeeeeeeeeeeeeeeeee
+          TOLAYER3: packet being lost
 packet has been sent to layer3
 A start timer
 
-EVENT time: 29501.779297,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 29505.552734,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 29994.859375,  type: 0, timerinterrupt   entity: 0
+EVENT time: 54078.882813,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
           TOLAYER3: packet being lost
 
-EVENT time: 30494.859375,  type: 0, timerinterrupt   entity: 0
+EVENT time: 54178.882813,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
           TOLAYER3: packet being corrupted
 
-EVENT time: 30497.113281,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 30505.423828,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 30581.501953,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 30994.859375,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 31494.859375,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 31496.091797,  type: 2, fromlayer3  entity: 1
+EVENT time: 54185.183594,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 31499.957031,  type: 2, fromlayer3  entity: 0
+EVENT time: 54190.453125,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 31994.859375,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 31997.222656,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 32002.984375,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 32429.886719,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 32494.859375,  type: 0, timerinterrupt   entity: 0
+EVENT time: 54278.882813,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 32499.728516,  type: 2, fromlayer3  entity: 1
+EVENT time: 54282.574219,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
+          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 32504.064453,  type: 2, fromlayer3  entity: 0
+EVENT time: 54288.605469,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 54378.882813,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 54387.906250,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 54393.679688,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 33961.183594,  type: 1, fromlayer5  entity: 0
+EVENT time: 55213.417969,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: ffffffffffffffffffff
 packet has been sent to layer3
 A start timer
 
-EVENT time: 33964.308594,  type: 2, fromlayer3  entity: 1
+EVENT time: 55219.105469,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 33972.949219,  type: 2, fromlayer3  entity: 0
+EVENT time: 55226.011719,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 35151.464844,  type: 1, fromlayer5  entity: 0
+EVENT time: 56278.269531,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: gggggggggggggggggggg
-          TOLAYER3: packet being lost
 packet has been sent to layer3
 A start timer
 
-EVENT time: 35490.039063,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 35651.464844,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 35655.750000,  type: 2, fromlayer3  entity: 1
+EVENT time: 56283.898438,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
+          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 35660.070313,  type: 2, fromlayer3  entity: 0
+EVENT time: 56293.042969,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 56378.269531,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 56385.660156,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 56478.269531,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 56480.476563,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 56490.457031,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 35703.546875,  type: 1, fromlayer5  entity: 0
+EVENT time: 57639.089844,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: hhhhhhhhhhhhhhhhhhhh
+          TOLAYER3: packet being corrupted
+packet has been sent to layer3
+A start timer
+
+EVENT time: 57648.730469,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 57657.941406,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 57739.089844,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 57743.394531,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 57750.500000,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 58549.882813,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: iiiiiiiiiiiiiiiiiiii
 packet has been sent to layer3
 A start timer
 
-EVENT time: 35706.996094,  type: 2, fromlayer3  entity: 1
+EVENT time: 58556.492188,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
-notcorrupt and has_seq1, ACK1
+notcorrupt and has_seq0, ACK0
 B send feedback to layer3
 
-EVENT time: 35709.355469,  type: 2, fromlayer3  entity: 0
+EVENT time: 58557.667969,  type: 2, fromlayer3  entity: 0
 A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK1 and ACK packet not corrupt, stop timer
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 37131.265625,  type: 1, fromlayer5  entity: 0
+EVENT time: 60027.285156,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: jjjjjjjjjjjjjjjjjjjj
           TOLAYER3: packet being lost
 packet has been sent to layer3
 A start timer
 
-EVENT time: 37548.882813,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 37631.265625,  type: 0, timerinterrupt   entity: 0
+EVENT time: 60127.285156,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 37638.253906,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq0, ACK0
-B send feedback to layer3
-
-EVENT time: 37643.667969,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK0 and ACK packet not corrupt, stop timer
-
-EVENT time: 39078.531250,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: llllllllllllllllllll
-packet has been sent to layer3
-A start timer
-
-EVENT time: 39086.023438,  type: 2, fromlayer3  entity: 1
+EVENT time: 60132.101563,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 39093.886719,  type: 2, fromlayer3  entity: 0
+EVENT time: 60140.988281,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 39783.203125,  type: 1, fromlayer5  entity: 0
+EVENT time: 61577.078125,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: mmmmmmmmmmmmmmmmmmmm
-          TOLAYER3: packet being corrupted
+Contents: kkkkkkkkkkkkkkkkkkkk
 packet has been sent to layer3
 A start timer
 
-EVENT time: 39784.875000,  type: 2, fromlayer3  entity: 1
+EVENT time: 61586.574219,  type: 2, fromlayer3  entity: 1
 B has received packet
-corrupt or has_seq1, ACK1
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 39786.726563,  type: 2, fromlayer3  entity: 0
+EVENT time: 61594.636719,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 40283.203125,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 40472.250000,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 40783.203125,  type: 0, timerinterrupt   entity: 0
+EVENT time: 61677.078125,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 40784.253906,  type: 2, fromlayer3  entity: 1
+EVENT time: 61680.683594,  type: 2, fromlayer3  entity: 1
 B has received packet
-B deliver to layer5
-notcorrupt and has_seq0, ACK0
+unexpected, ACK0
 B send feedback to layer3
 
-EVENT time: 40788.671875,  type: 2, fromlayer3  entity: 0
+EVENT time: 61682.597656,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 40962.253906,  type: 1, fromlayer5  entity: 0
+EVENT time: 63512.500000,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: llllllllllllllllllll
+packet has been sent to layer3
+A start timer
+
+EVENT time: 63515.789063,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 63525.785156,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 64449.539063,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: mmmmmmmmmmmmmmmmmmmm
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 64549.539063,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 64649.539063,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 64656.753906,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 64659.371094,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 64749.539063,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 64757.132813,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 64763.187500,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 64849.539063,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 64851.058594,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 64858.449219,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 65772.640625,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: nnnnnnnnnnnnnnnnnnnn
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 65872.640625,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 65874.273438,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 65880.531250,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 67714.414063,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: oooooooooooooooooooo
           TOLAYER3: packet being corrupted
 packet has been sent to layer3
 A start timer
 
-EVENT time: 40967.878906,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 40970.714844,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 41462.253906,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 41465.636719,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 41471.667969,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 41762.875000,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 41962.253906,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 41969.722656,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq1, ACK1
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 41972.839844,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 42462.253906,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 42470.445313,  type: 2, fromlayer3  entity: 1
+EVENT time: 67720.757813,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 42474.539063,  type: 2, fromlayer3  entity: 0
+EVENT time: 67725.390625,  type: 2, fromlayer3  entity: 0
 A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK1 and ACK packet not corrupt, stop timer
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 42794.828125,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: qqqqqqqqqqqqqqqqqqqq
-packet has been sent to layer3
-A start timer
+EVENT time: 67814.414063,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
 
-EVENT time: 42797.203125,  type: 2, fromlayer3  entity: 1
+EVENT time: 67823.976563,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
-          TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 43294.828125,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 43304.460938,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 43794.828125,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 43799.828125,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-B send feedback to layer3
-
-EVENT time: 43806.414063,  type: 2, fromlayer3  entity: 0
+EVENT time: 67829.945313,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 44699.609375,  type: 1, fromlayer5  entity: 0
+EVENT time: 69254.679688,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: pppppppppppppppppppp
+packet has been sent to layer3
+A start timer
+
+EVENT time: 69256.523438,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 69354.679688,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 69361.421875,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 69369.617188,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 70751.304688,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: qqqqqqqqqqqqqqqqqqqq
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 70851.304688,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 70859.484375,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 70861.156250,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 71880.492188,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: rrrrrrrrrrrrrrrrrrrr
 packet has been sent to layer3
 A start timer
 
-EVENT time: 44701.125000,  type: 2, fromlayer3  entity: 1
+EVENT time: 71887.179688,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
-          TOLAYER3: packet being corrupted
+          TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 44709.820313,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 44849.394531,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 45199.609375,  type: 0, timerinterrupt   entity: 0
+EVENT time: 71980.492188,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
 
-EVENT time: 45200.859375,  type: 2, fromlayer3  entity: 1
+EVENT time: 71982.250000,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
           TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 45206.519531,  type: 2, fromlayer3  entity: 0
+EVENT time: 71983.601563,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK0 or corrupt, wait and do nothing
 
-EVENT time: 45699.609375,  type: 0, timerinterrupt   entity: 0
+EVENT time: 72080.492188,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
 
-EVENT time: 45700.964844,  type: 2, fromlayer3  entity: 1
+EVENT time: 72087.656250,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 72096.382813,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 72180.492188,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 72186.617188,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 45703.863281,  type: 2, fromlayer3  entity: 0
+EVENT time: 72195.156250,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 45781.003906,  type: 1, fromlayer5  entity: 0
+EVENT time: 73779.601563,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: tttttttttttttttttttt
-          TOLAYER3: packet being lost
+Contents: ssssssssssssssssssss
 packet has been sent to layer3
 A start timer
 
-EVENT time: 46281.003906,  type: 0, timerinterrupt   entity: 0
+EVENT time: 73787.867188,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 73879.601563,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
           TOLAYER3: packet being corrupted
 
-EVENT time: 46287.542969,  type: 2, fromlayer3  entity: 1
+EVENT time: 73887.507813,  type: 2, fromlayer3  entity: 1
 B has received packet
-corrupt or has_seq1, ACK1
+unexpected, ACK0
+          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 46290.226563,  type: 2, fromlayer3  entity: 0
+EVENT time: 73888.632813,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 46559.835938,  type: 1, fromlayer5  entity: 0
+EVENT time: 73979.601563,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 74073.492188,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 A Wait for ACK0, message dropped
 
-EVENT time: 46781.003906,  type: 0, timerinterrupt   entity: 0
+EVENT time: 74079.601563,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 74179.601563,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 74184.531250,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq0, ACK0
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 74194.484375,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 74279.601563,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 46782.812500,  type: 2, fromlayer3  entity: 1
+EVENT time: 74284.359375,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 74285.734375,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 74763.453125,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: uuuuuuuuuuuuuuuuuuuu
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 74863.453125,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 74864.671875,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 74867.804688,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 76750.023438,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: vvvvvvvvvvvvvvvvvvvv
+packet has been sent to layer3
+A start timer
+
+EVENT time: 76751.648438,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 76753.898438,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 77723.078125,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: wwwwwwwwwwwwwwwwwwww
+packet has been sent to layer3
+A start timer
+
+EVENT time: 77725.937500,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 77733.820313,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 79327.921875,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: xxxxxxxxxxxxxxxxxxxx
+packet has been sent to layer3
+A start timer
+
+EVENT time: 79331.742188,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 79340.906250,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 79877.257813,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: yyyyyyyyyyyyyyyyyyyy
+          TOLAYER3: packet being lost
+packet has been sent to layer3
+A start timer
+
+EVENT time: 79977.257813,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 79984.796875,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 79993.789063,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 80077.257813,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 80083.789063,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 80085.460938,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 80745.085938,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: zzzzzzzzzzzzzzzzzzzz
+packet has been sent to layer3
+A start timer
+
+EVENT time: 80747.476563,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 80750.804688,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 82035.593750,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: aaaaaaaaaaaaaaaaaaaa
+packet has been sent to layer3
+A start timer
+
+EVENT time: 82042.101563,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 82135.593750,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 82144.484375,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 82145.523438,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 82442.585938,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: bbbbbbbbbbbbbbbbbbbb
+packet has been sent to layer3
+A start timer
+
+EVENT time: 82448.937500,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
           TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 46784.585938,  type: 2, fromlayer3  entity: 0
+EVENT time: 82450.796875,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 47281.003906,  type: 0, timerinterrupt   entity: 0
+EVENT time: 82542.585938,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 47288.324219,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 47294.910156,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 47781.003906,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 47788.214844,  type: 2, fromlayer3  entity: 1
+EVENT time: 82547.429688,  type: 2, fromlayer3  entity: 1
 B has received packet
 unexpected, ACK0
           TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 48281.003906,  type: 0, timerinterrupt   entity: 0
+EVENT time: 82642.585938,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 48285.156250,  type: 2, fromlayer3  entity: 1
+EVENT time: 82645.742188,  type: 2, fromlayer3  entity: 1
 B has received packet
 unexpected, ACK0
-          TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 48465.656250,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 48781.003906,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 48790.511719,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq0, ACK0
-B send feedback to layer3
-
-EVENT time: 48799.992188,  type: 2, fromlayer3  entity: 0
+EVENT time: 82653.843750,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 49619.132813,  type: 1, fromlayer5  entity: 0
+EVENT time: 83536.429688,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: wwwwwwwwwwwwwwwwwwww
-          TOLAYER3: packet being lost
+Contents: cccccccccccccccccccc
 packet has been sent to layer3
 A start timer
 
-EVENT time: 50119.132813,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 50619.132813,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 51119.132813,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 51121.097656,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-B send feedback to layer3
-
-EVENT time: 51127.593750,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 51220.562500,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 51619.132813,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 51621.960938,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-B send feedback to layer3
-
-EVENT time: 51629.527344,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 51873.476563,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 51924.566406,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 52119.132813,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 52124.351563,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-B send feedback to layer3
-
-EVENT time: 52132.605469,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 52619.132813,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 52925.085938,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 53119.132813,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 53122.664063,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 53619.132813,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 53624.300781,  type: 2, fromlayer3  entity: 1
+EVENT time: 83540.656250,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
-          TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 53765.507813,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 54119.132813,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 54128.324219,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 54130.566406,  type: 2, fromlayer3  entity: 0
+EVENT time: 83542.328125,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 54511.015625,  type: 1, fromlayer5  entity: 0
+EVENT time: 83601.492188,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: dddddddddddddddddddd
           TOLAYER3: packet being corrupted
 packet has been sent to layer3
 A start timer
 
-EVENT time: 54520.593750,  type: 2, fromlayer3  entity: 1
+EVENT time: 83603.281250,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 54529.132813,  type: 2, fromlayer3  entity: 0
+EVENT time: 83610.687500,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 55011.015625,  type: 0, timerinterrupt   entity: 0
+EVENT time: 83701.492188,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
           TOLAYER3: packet being corrupted
 
-EVENT time: 55012.449219,  type: 2, fromlayer3  entity: 1
+EVENT time: 83706.250000,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 55014.777344,  type: 2, fromlayer3  entity: 0
+EVENT time: 83714.695313,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 55511.015625,  type: 0, timerinterrupt   entity: 0
+EVENT time: 83801.492188,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 55516.160156,  type: 2, fromlayer3  entity: 1
+EVENT time: 83811.171875,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
 B send feedback to layer3
 
-EVENT time: 55523.066406,  type: 2, fromlayer3  entity: 0
+EVENT time: 83812.234375,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 55736.152344,  type: 1, fromlayer5  entity: 0
+EVENT time: 85280.312500,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: eeeeeeeeeeeeeeeeeeee
-          TOLAYER3: packet being corrupted
+          TOLAYER3: packet being lost
 packet has been sent to layer3
 A start timer
 
-EVENT time: 55740.253906,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-B send feedback to layer3
-
-EVENT time: 55742.046875,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 55878.671875,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 55971.449219,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 56236.152344,  type: 0, timerinterrupt   entity: 0
+EVENT time: 85380.312500,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
           TOLAYER3: packet being corrupted
 
-EVENT time: 56240.640625,  type: 2, fromlayer3  entity: 1
+EVENT time: 85387.445313,  type: 2, fromlayer3  entity: 1
 B has received packet
 unexpected, ACK0
           TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 56241.863281,  type: 2, fromlayer3  entity: 0
+EVENT time: 85391.554688,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK0 or corrupt, wait and do nothing
 
-EVENT time: 56736.152344,  type: 0, timerinterrupt   entity: 0
+EVENT time: 85480.312500,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 56739.648438,  type: 2, fromlayer3  entity: 1
+EVENT time: 85487.437500,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 56744.609375,  type: 2, fromlayer3  entity: 0
+EVENT time: 85493.929688,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 85580.312500,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 85584.914063,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 85592.250000,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 57628.726563,  type: 1, fromlayer5  entity: 0
+EVENT time: 85856.382813,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: hhhhhhhhhhhhhhhhhhhh
-          TOLAYER3: packet being lost
+Contents: ffffffffffffffffffff
 packet has been sent to layer3
 A start timer
 
-EVENT time: 58128.726563,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 58133.210938,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 58628.726563,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 59128.726563,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 59132.187500,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 59137.062500,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 59528.078125,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 59628.726563,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 59634.250000,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 60128.726563,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 60135.437500,  type: 2, fromlayer3  entity: 1
+EVENT time: 85865.750000,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
 B send feedback to layer3
 
-EVENT time: 60139.910156,  type: 2, fromlayer3  entity: 0
+EVENT time: 85869.453125,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 60207.421875,  type: 1, fromlayer5  entity: 0
+EVENT time: 87244.671875,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: jjjjjjjjjjjjjjjjjjjj
-          TOLAYER3: packet being lost
+Contents: gggggggggggggggggggg
+          TOLAYER3: packet being corrupted
 packet has been sent to layer3
 A start timer
 
-EVENT time: 60707.421875,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 60714.535156,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq1, ACK1
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 60718.707031,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 61207.421875,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 61217.269531,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 61222.144531,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 61707.421875,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 61713.054688,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 62186.484375,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 62207.421875,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 62210.343750,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 62215.425781,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK1 and ACK packet not corrupt, stop timer
-
-EVENT time: 62876.507813,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: llllllllllllllllllll
-packet has been sent to layer3
-A start timer
-
-EVENT time: 62884.828125,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq0, ACK0
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 63376.507813,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 63384.550781,  type: 2, fromlayer3  entity: 1
+EVENT time: 87252.093750,  type: 2, fromlayer3  entity: 1
 B has received packet
 unexpected, ACK0
 B send feedback to layer3
 
-EVENT time: 63393.027344,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK0 and ACK packet not corrupt, stop timer
-
-EVENT time: 63841.746094,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: mmmmmmmmmmmmmmmmmmmm
-          TOLAYER3: packet being lost
-packet has been sent to layer3
-A start timer
-
-EVENT time: 64341.746094,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 64683.386719,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 64841.746094,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 64843.554688,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 64847.445313,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK1 and ACK packet not corrupt, stop timer
-
-EVENT time: 65378.660156,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: oooooooooooooooooooo
-packet has been sent to layer3
-A start timer
-
-EVENT time: 65380.199219,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq0, ACK0
-B send feedback to layer3
-
-EVENT time: 65387.890625,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK0 and ACK packet not corrupt, stop timer
-
-EVENT time: 66150.531250,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: pppppppppppppppppppp
-packet has been sent to layer3
-A start timer
-
-EVENT time: 66158.132813,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq1, ACK1
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 66650.531250,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 66658.765625,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 66662.515625,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK1 and ACK packet not corrupt, stop timer
-
-EVENT time: 68021.742188,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: qqqqqqqqqqqqqqqqqqqq
-packet has been sent to layer3
-A start timer
-
-EVENT time: 68023.648438,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq0, ACK0
-B send feedback to layer3
-
-EVENT time: 68030.632813,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK0 and ACK packet not corrupt, stop timer
-
-EVENT time: 68125.875000,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: rrrrrrrrrrrrrrrrrrrr
-packet has been sent to layer3
-A start timer
-
-EVENT time: 68133.101563,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 68134.187500,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK1 and ACK packet not corrupt, stop timer
-
-EVENT time: 69412.718750,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: ssssssssssssssssssss
-packet has been sent to layer3
-A start timer
-
-EVENT time: 69419.914063,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq0, ACK0
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 69421.023438,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 69912.718750,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 70244.656250,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 70412.718750,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 70419.796875,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-B send feedback to layer3
-
-EVENT time: 70422.984375,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK0 and ACK packet not corrupt, stop timer
-
-EVENT time: 70638.226563,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: uuuuuuuuuuuuuuuuuuuu
-packet has been sent to layer3
-A start timer
-
-EVENT time: 70648.164063,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 70653.226563,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK1 and ACK packet not corrupt, stop timer
-
-EVENT time: 71619.640625,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: vvvvvvvvvvvvvvvvvvvv
-          TOLAYER3: packet being corrupted
-packet has been sent to layer3
-A start timer
-
-EVENT time: 71627.179688,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 71633.351563,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 72119.640625,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 72127.046875,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 72134.335938,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 72619.640625,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 72621.523438,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq0, ACK0
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 72626.734375,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 72847.765625,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 73119.640625,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 73122.640625,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq0, ACK0
-B send feedback to layer3
-
-EVENT time: 73128.656250,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK0 and ACK packet not corrupt, stop timer
-
-EVENT time: 74484.171875,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: xxxxxxxxxxxxxxxxxxxx
-          TOLAYER3: packet being corrupted
-packet has been sent to layer3
-A start timer
-
-EVENT time: 74488.062500,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-B send feedback to layer3
-
-EVENT time: 74493.695313,  type: 2, fromlayer3  entity: 0
+EVENT time: 87254.414063,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK0 or corrupt, wait and do nothing
 
-EVENT time: 74662.093750,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 74984.171875,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 74993.976563,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 75405.765625,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 75484.171875,  type: 0, timerinterrupt   entity: 0
+EVENT time: 87344.671875,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
           TOLAYER3: packet being lost
 
-EVENT time: 75984.171875,  type: 0, timerinterrupt   entity: 0
+EVENT time: 87444.671875,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 75988.648438,  type: 2, fromlayer3  entity: 1
+EVENT time: 87448.640625,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
-          TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 76484.171875,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 76486.867188,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 76491.875000,  type: 2, fromlayer3  entity: 0
+EVENT time: 87456.007813,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 77374.640625,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: aaaaaaaaaaaaaaaaaaaa
-packet has been sent to layer3
-A start timer
-
-EVENT time: 77376.546875,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq0, ACK0
-B send feedback to layer3
-
-EVENT time: 77381.117188,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK0 and ACK packet not corrupt, stop timer
-
-EVENT time: 78009.117188,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: bbbbbbbbbbbbbbbbbbbb
-          TOLAYER3: packet being corrupted
-packet has been sent to layer3
-A start timer
-
-EVENT time: 78016.476563,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 78020.445313,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 78509.117188,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 78510.109375,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 78516.601563,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq1, ACK1
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 78874.867188,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 79009.117188,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 79083.062500,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 79509.117188,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 79512.875000,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 79517.023438,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 79679.210938,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 80009.117188,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 80018.421875,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-          TOLAYER3: packet being corrupted
-B send feedback to layer3
-
-EVENT time: 80019.718750,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 80509.117188,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 80776.781250,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 81009.117188,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 81011.210938,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 81016.539063,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK1 and ACK packet not corrupt, stop timer
-
-EVENT time: 81591.382813,  type: 1, fromlayer5  entity: 0
+EVENT time: 87692.562500,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: hhhhhhhhhhhhhhhhhhhh
 packet has been sent to layer3
 A start timer
 
-EVENT time: 81598.773438,  type: 2, fromlayer3  entity: 1
+EVENT time: 87699.375000,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
+          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 81601.757813,  type: 2, fromlayer3  entity: 0
+EVENT time: 87701.359375,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 87792.562500,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 87801.195313,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 87804.992188,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 83038.203125,  type: 1, fromlayer5  entity: 0
+EVENT time: 89066.507813,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: iiiiiiiiiiiiiiiiiiii
           TOLAYER3: packet being corrupted
 packet has been sent to layer3
 A start timer
 
-EVENT time: 83046.414063,  type: 2, fromlayer3  entity: 1
+EVENT time: 89074.617188,  type: 2, fromlayer3  entity: 1
 B has received packet
 unexpected, ACK0
-          TOLAYER3: packet being corrupted
+          TOLAYER3: packet being lost
 B send feedback to layer3
 
-EVENT time: 83047.921875,  type: 2, fromlayer3  entity: 0
+EVENT time: 89166.507813,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 89167.664063,  type: 2, fromlayer3  entity: 1
+B has received packet
+unexpected, ACK0
+B send feedback to layer3
+
+EVENT time: 89171.914063,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK0 or corrupt, wait and do nothing
 
-EVENT time: 83232.242188,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 83425.242188,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 83538.203125,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 83612.320313,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK1, message dropped
-
-EVENT time: 84038.203125,  type: 0, timerinterrupt   entity: 0
+EVENT time: 89266.507813,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 84043.117188,  type: 2, fromlayer3  entity: 1
+EVENT time: 89269.187500,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
 B send feedback to layer3
 
-EVENT time: 84047.781250,  type: 2, fromlayer3  entity: 0
+EVENT time: 89275.945313,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 84783.070313,  type: 1, fromlayer5  entity: 0
+EVENT time: 90449.054688,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: mmmmmmmmmmmmmmmmmmmm
-          TOLAYER3: packet being lost
+Contents: jjjjjjjjjjjjjjjjjjjj
 packet has been sent to layer3
 A start timer
 
-EVENT time: 85283.070313,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
+EVENT time: 90454.750000,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
 
-EVENT time: 85291.609375,  type: 2, fromlayer3  entity: 1
+EVENT time: 90462.156250,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 91126.867188,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: kkkkkkkkkkkkkkkkkkkk
+packet has been sent to layer3
+A start timer
+
+EVENT time: 91131.679688,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 91139.203125,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 92952.359375,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: llllllllllllllllllll
+packet has been sent to layer3
+A start timer
+
+EVENT time: 92955.890625,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq0, ACK0
+B send feedback to layer3
+
+EVENT time: 92964.898438,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK0 and ACK packet not corrupt, stop timer
+
+EVENT time: 93174.531250,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: mmmmmmmmmmmmmmmmmmmm
+packet has been sent to layer3
+A start timer
+
+EVENT time: 93182.953125,  type: 2, fromlayer3  entity: 1
+B has received packet
+B deliver to layer5
+notcorrupt and has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 93191.000000,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 94167.179688,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: nnnnnnnnnnnnnnnnnnnn
+packet has been sent to layer3
+A start timer
+
+EVENT time: 94171.554688,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
           TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 85298.125000,  type: 2, fromlayer3  entity: 0
+EVENT time: 94178.156250,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK1 or corrupt, wait and do nothing
 
-EVENT time: 85303.835938,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 85783.070313,  type: 0, timerinterrupt   entity: 0
+EVENT time: 94267.179688,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 85788.937500,  type: 2, fromlayer3  entity: 1
+EVENT time: 94273.992188,  type: 2, fromlayer3  entity: 1
 B has received packet
 unexpected, ACK0
-          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 85794.367188,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
-
-EVENT time: 86212.796875,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-A Wait for ACK0, message dropped
-
-EVENT time: 86283.070313,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 86286.664063,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq0, ACK0
-B send feedback to layer3
-
-EVENT time: 86294.039063,  type: 2, fromlayer3  entity: 0
+EVENT time: 94277.773438,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 87477.117188,  type: 1, fromlayer5  entity: 0
+EVENT time: 95112.335938,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: pppppppppppppppppppp
+Contents: oooooooooooooooooooo
+          TOLAYER3: packet being lost
 packet has been sent to layer3
 A start timer
 
-EVENT time: 87478.968750,  type: 2, fromlayer3  entity: 1
+EVENT time: 95212.335938,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 95214.515625,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
+          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 87483.046875,  type: 2, fromlayer3  entity: 0
+EVENT time: 95223.023438,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
-A get ACK1 and ACK packet not corrupt, stop timer
+A get ACK0 or corrupt, wait and do nothing
 
-EVENT time: 88328.648438,  type: 1, fromlayer5  entity: 0
-A receiver message from above
-Contents: qqqqqqqqqqqqqqqqqqqq
+EVENT time: 95312.335938,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 95412.335938,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
           TOLAYER3: packet being corrupted
-packet has been sent to layer3
-A start timer
 
-EVENT time: 88335.203125,  type: 2, fromlayer3  entity: 1
+EVENT time: 95415.992188,  type: 2, fromlayer3  entity: 1
 B has received packet
 corrupt or has_seq1, ACK1
           TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 88341.507813,  type: 2, fromlayer3  entity: 0
+EVENT time: 95424.531250,  type: 2, fromlayer3  entity: 0
 A has received packet
-A status: A_Wait_for_ACK_0
-A get ACK1 or corrupt, wait and do nothing
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
 
-EVENT time: 88828.648438,  type: 0, timerinterrupt   entity: 0
+EVENT time: 95512.335938,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 95612.335938,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
 
-EVENT time: 88833.914063,  type: 2, fromlayer3  entity: 1
+EVENT time: 95613.757813,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 95618.500000,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 95712.335938,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 95720.476563,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 95812.335938,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 95820.945313,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being lost
+B send feedback to layer3
+
+EVENT time: 95912.335938,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 95916.703125,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 95919.828125,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK0 or corrupt, wait and do nothing
+
+EVENT time: 95998.351563,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+A Wait for ACK1, message dropped
+
+EVENT time: 96012.335938,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 96019.351563,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 96026.312500,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_1
+A get ACK1 and ACK packet not corrupt, stop timer
+
+EVENT time: 97149.632813,  type: 1, fromlayer5  entity: 0
+A receiver message from above
+Contents: qqqqqqqqqqqqqqqqqqqq
+packet has been sent to layer3
+A start timer
+
+EVENT time: 97153.875000,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
 B send feedback to layer3
 
-EVENT time: 88837.601563,  type: 2, fromlayer3  entity: 0
+EVENT time: 97155.281250,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 88993.828125,  type: 1, fromlayer5  entity: 0
+EVENT time: 98063.234375,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: rrrrrrrrrrrrrrrrrrrr
 packet has been sent to layer3
 A start timer
 
-EVENT time: 88996.648438,  type: 2, fromlayer3  entity: 1
+EVENT time: 98066.031250,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq1, ACK1
-          TOLAYER3: packet being corrupted
 B send feedback to layer3
 
-EVENT time: 89005.671875,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 89493.828125,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 89499.601563,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 89509.281250,  type: 2, fromlayer3  entity: 0
+EVENT time: 98071.015625,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK1 and ACK packet not corrupt, stop timer
 
-EVENT time: 90315.953125,  type: 1, fromlayer5  entity: 0
+EVENT time: 98167.484375,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: ssssssssssssssssssss
+          TOLAYER3: packet being corrupted
 packet has been sent to layer3
 A start timer
 
-EVENT time: 90322.859375,  type: 2, fromlayer3  entity: 1
+EVENT time: 98177.335938,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+          TOLAYER3: packet being corrupted
+B send feedback to layer3
+
+EVENT time: 98185.648438,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 98267.484375,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 98274.289063,  type: 2, fromlayer3  entity: 1
+B has received packet
+corrupt or has_seq1, ACK1
+B send feedback to layer3
+
+EVENT time: 98280.578125,  type: 2, fromlayer3  entity: 0
+A has received packet
+A status: A_Wait_for_ACK_0
+A get ACK1 or corrupt, wait and do nothing
+
+EVENT time: 98367.484375,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+          TOLAYER3: packet being lost
+
+EVENT time: 98467.484375,  type: 0, timerinterrupt   entity: 0
+A timer expired, resend packet and start timer
+
+EVENT time: 98470.656250,  type: 2, fromlayer3  entity: 1
 B has received packet
 B deliver to layer5
 notcorrupt and has_seq0, ACK0
 B send feedback to layer3
 
-EVENT time: 90326.625000,  type: 2, fromlayer3  entity: 0
+EVENT time: 98472.187500,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_0
 A get ACK0 and ACK packet not corrupt, stop timer
 
-EVENT time: 91712.476563,  type: 1, fromlayer5  entity: 0
+EVENT time: 100122.437500,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 Contents: tttttttttttttttttttt
           TOLAYER3: packet being corrupted
 packet has been sent to layer3
 A start timer
 
-EVENT time: 91721.625000,  type: 2, fromlayer3  entity: 1
+EVENT time: 100124.492188,  type: 2, fromlayer3  entity: 1
 B has received packet
 unexpected, ACK0
 B send feedback to layer3
 
-EVENT time: 91729.015625,  type: 2, fromlayer3  entity: 0
+EVENT time: 100130.671875,  type: 2, fromlayer3  entity: 0
 A has received packet
 A status: A_Wait_for_ACK_1
 A get ACK0 or corrupt, wait and do nothing
 
-EVENT time: 92212.476563,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being lost
-
-EVENT time: 92712.476563,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
-
-EVENT time: 92714.679688,  type: 2, fromlayer3  entity: 1
-B has received packet
-unexpected, ACK0
-B send feedback to layer3
-
-EVENT time: 92724.664063,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK0 or corrupt, wait and do nothing
-
-EVENT time: 93212.476563,  type: 0, timerinterrupt   entity: 0
-A timer expired, resend packet and start timer
-
-EVENT time: 93219.421875,  type: 2, fromlayer3  entity: 1
-B has received packet
-B deliver to layer5
-notcorrupt and has_seq1, ACK1
-          TOLAYER3: packet being lost
-B send feedback to layer3
-
-EVENT time: 93712.414063,  type: 1, fromlayer5  entity: 0
+EVENT time: 100167.546875,  type: 1, fromlayer5  entity: 0
 A receiver message from above
 A Wait for ACK1, message dropped
 
-EVENT time: 93712.476563,  type: 0, timerinterrupt   entity: 0
+EVENT time: 100222.437500,  type: 0, timerinterrupt   entity: 0
 A timer expired, resend packet and start timer
-          TOLAYER3: packet being corrupted
+          TOLAYER3: packet being lost
 
-EVENT time: 93721.687500,  type: 2, fromlayer3  entity: 1
-B has received packet
-corrupt or has_seq1, ACK1
-B send feedback to layer3
-
-EVENT time: 93725.992188,  type: 2, fromlayer3  entity: 0
-A has received packet
-A status: A_Wait_for_ACK_1
-A get ACK1 and ACK packet not corrupt, stop timer
-
-EVENT time: 94277.375000,  type: 1, fromlayer5  entity: 0
+EVENT time: 100251.718750,  type: 1, fromlayer5  entity: 0
 A receiver message from above
-Contents: vvvvvvvvvvvvvvvvvvvv
-packet has been sent to layer3
-A start timer
+A Wait for ACK1, message dropped
 
-EVENT time: 94281.703125,  type: 2, fromlayer3  entity: 1
- Simulator terminated at time 94281.703125
+EVENT time: 100322.437500,  type: 0, timerinterrupt   entity: 0
+ Simulator terminated at time 100322.437500
  after sending 100 msgs from layer5
 
 Process finished with exit code 0
