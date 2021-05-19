@@ -23,3 +23,6 @@ add_executable(rdt_3
 
 add_executable(stopAndWait
         RDT_stopAndWait_ver.c)
+
+add_executable(goBackN
+        RDT_goBackN_ver.c)
