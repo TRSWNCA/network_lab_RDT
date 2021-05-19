@@ -21,3 +21,5 @@ RDT/
 Stop-and-Wait实现见`RDT_stopAndWait_ver.c`
 
 Go-Back-N实现见`RDT_goBackN_ver.c`
+
+注：由于实验提供文件为K&R C风格，为了一致性，在其基础上的RDT编码实现也都沿用了K&R C风格。
