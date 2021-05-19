@@ -36,29 +36,24 @@ struct pkt {
     };
 
 /********* STUDENTS WRITE THE NEXT SEVEN ROUTINES *********/
-
-/* define A status */
-#define A_Wait_for_call_from_above_0    0
-#define A_Wait_for_ACK_0                1
-#define A_Wait_for_call_from_above_1    2
-#define A_Wait_for_ACK_1                3
-
-
-/* define B status */
-#define B_Wait_for_call_from_below_0    0
-#define B_Wait_for_call_from_below_1    1
-
 /* A global variables */
-int A_status;
-struct pkt current_sending_pkt;
+#define WINDOW_SIZE 8
+#define SENDER_BUFFER_SIZE 50
+int base;
+int nextseqnum;
+int nextbufferpos;
+int A_timer_status; /* 0 -> timer not set yet; 1 -> timer already set */
+struct pkt senderBuffer[SENDER_BUFFER_SIZE];
 
 /* B global variables */
-int B_status;
+int expectedseqnum;
+struct pkt B_sndpkt;
 
 /* universal global utils */
 #define MODNUM 19260817     /* for checksum */
 #define BASENUM 114514      /* for checksum */
-#define MAXTIME 500.0       /* for timer */
+#define MAXTIME 20.0
+#define DEFAULT_SEQ 1919810 /* for B_init */
 #define DEBUG
 
 /* help functions */
@@ -137,100 +132,69 @@ A_output(message)
     int i;
 
     #ifdef DEBUG
-        printf("A receiver message from above\n");
+        printf("A receive message from above, ");
     #endif
 
-    if(A_status == A_Wait_for_call_from_above_0){
+    if(nextbufferpos + 1 == base){
+        /* sender buffer full, drop message */
         #ifdef DEBUG
-            printf("Contents: ");
-            for(i = 0; i < 20; i++){
-                printf("%c", message.data[i]);
-            }
-            printf("\n");
+            printf("sender buffer full, drop message\n");
         #endif
-
-        /* make_pkt */
-        struct pkt sndpkt;
-        make_pkt(0, 0, &sndpkt, message);
-
-        /* copy the packet to manage resend */
-        current_sending_pkt.seqnum = sndpkt.seqnum;
-        current_sending_pkt.acknum = sndpkt.acknum;
-        current_sending_pkt.checksum = sndpkt.checksum;
-        for(i = 0; i < 20; i++){
-            current_sending_pkt.payload[i] = sndpkt.payload[i];
-        }
-
-        /* udt_send */
-        tolayer3(0, sndpkt);
-        #ifdef DEBUG
-            printf("packet has been sent to layer3\n");
-        #endif
-
-        /* start timer */
-        starttimer(0, MAXTIME);
-        #ifdef DEBUG
-            printf("A start timer\n");
-        #endif
-
-        /* status move */
-        A_status = A_Wait_for_ACK_0;
-
-    }
-    else if(A_status == A_Wait_for_ACK_0){
-        /* do nothing */
-        #ifdef DEBUG
-            printf("A Wait for ACK0, message dropped\n");
-        #endif
-    }
-    else if(A_status == A_Wait_for_call_from_above_1){
-        #ifdef DEBUG
-            printf("Contents: ");
-            for(i = 0; i < 20; i++){
-                printf("%c", message.data[i]);
-            }
-            printf("\n");
-        #endif
-
-        /* make_pkt */
-        struct pkt sndpkt;
-        make_pkt(1, 0, &sndpkt, message);
-
-        /* copy the packet to manage resend */
-        current_sending_pkt.seqnum = sndpkt.seqnum;
-        current_sending_pkt.acknum = sndpkt.acknum;
-        current_sending_pkt.checksum = sndpkt.checksum;
-        for(i = 0; i < 20; i++){
-            current_sending_pkt.payload[i] = sndpkt.payload[i];
-        }
-
-        /* udt_send */
-        tolayer3(0, sndpkt);
-        #ifdef DEBUG
-            printf("packet has been sent to layer3\n");
-        #endif
-
-        /* start timer */
-        starttimer(0, MAXTIME);
-        #ifdef DEBUG
-            printf("A start timer\n");
-        #endif
-
-        /* status move */
-        A_status = A_Wait_for_ACK_1;
-
-    }
-    else if(A_status == A_Wait_for_ACK_1){
-        /* do nothing */
-        #ifdef DEBUG
-            printf("A Wait for ACK1, message dropped\n");
-        #endif
+        /* drop message, do not buffer */
     }
     else{
-        /* do nothing */
+        /* sender buffer still available, buffer message first */
         #ifdef DEBUG
-            printf("unexpected condition, message dropped\n");
+            printf("sender buffer still available, buffer message first\n");
         #endif
+        /* buffer message */
+        struct pkt bufferPkt;
+        make_pkt(nextbufferpos, 0, &bufferPkt, message);
+        senderBuffer[nextbufferpos].seqnum = bufferPkt.seqnum;
+        senderBuffer[nextbufferpos].acknum = bufferPkt.acknum;
+        senderBuffer[nextbufferpos].checksum = bufferPkt.checksum;
+        for(i = 0; i < 20; i++){
+            senderBuffer[nextbufferpos].payload[i] = bufferPkt.payload[i];
+        }
+        /* increase nextbufferpos */
+        nextbufferpos = (nextbufferpos + 1) % SENDER_BUFFER_SIZE;
+
+        /* check if the buffered packet falls in window */
+        if(((nextseqnum) % SENDER_BUFFER_SIZE) < ((base + WINDOW_SIZE) % SENDER_BUFFER_SIZE)){
+            /* buffered packet in sending window */
+            if((nextseqnum % SENDER_BUFFER_SIZE) != (nextbufferpos % SENDER_BUFFER_SIZE)){
+                /* not exceed buffered packet, able to send */
+                #ifdef DEBUG
+                    /* print current sending message */
+                    printf("Message contents: ");
+                    for(i = 0; i < 20; i++){
+                        printf("%c", message.data[i]);
+                    }
+                    printf("\n");
+                #endif
+                /* udt_send */
+                tolayer3(0, senderBuffer[nextseqnum]);
+                #ifdef DEBUG
+                    printf("packet%d has been sent to layer3\n", nextseqnum);
+                #endif
+                if(base == nextseqnum){
+                    if(A_timer_status == 1){
+                        /* timer already set, stop it to avoid warning */
+                        stoptimer(0);
+                    }
+                    starttimer(0, MAXTIME);
+                    A_timer_status = 1;
+                }
+                /* increase nextseqnum */
+                nextseqnum = (nextseqnum + 1) % SENDER_BUFFER_SIZE;
+            }
+            else{
+                /* exceed buffered packet, unable to send */
+            }
+        }
+        else{
+            /* buffered packet out of sending window, do not send */
+        }
     }
 
 }
@@ -245,71 +209,42 @@ B_output(message)  /* need be completed only for extra credit */
 A_input(packet)
   struct pkt packet;
 {
+    int isCorr = isCorrupt(packet);
+    int ackNum = packet.acknum;
+
     #ifdef DEBUG
-        printf("A has received packet\n");
+        printf("A has received ACK: %d, corrupt: %d\n", ackNum, isCorr);
     #endif
 
-    if(A_status == A_Wait_for_call_from_above_0){
+    if(isCorr == 0){
+        /* not corrupt */
+        /* slide windows base */
+        base = (ackNum + 1) % SENDER_BUFFER_SIZE;
         #ifdef DEBUG
-            printf("A status: A_Wait_for_call_from_above_0\n");
+        printf("A slide window, base: %d, end: %d\n", base, (base + WINDOW_SIZE) % SENDER_BUFFER_SIZE);
         #endif
-        /* do nothing */
-    }
-    else if(A_status == A_Wait_for_ACK_0){
-        #ifdef DEBUG
-            printf("A status: A_Wait_for_ACK_0\n");
-        #endif
-        int isACK = packet.acknum;
-        int isCorr = isCorrupt(packet);
-
-        if((isCorr == 0) && (isACK == 0)){
-            /* notcorrupt and isACK(0) */
-            #ifdef DEBUG
-                printf("A get ACK0 and ACK packet not corrupt, stop timer\n");
-            #endif
-            /* stop timer */
+        if(base == nextseqnum){
+            if(A_timer_status == 0){
+                /* timer not set yet, start it to avoid warning */
+                starttimer(0, MAXTIME);
+            }
             stoptimer(0);
-            /* status move */
-            A_status = A_Wait_for_call_from_above_1;
+            A_timer_status = 0;
         }
-        else {
-            /* corrupt or ACK1 */
-            #ifdef DEBUG
-                printf("A get ACK1 or corrupt, wait and do nothing\n");
-            #endif
-            /* do nothing */
+        else{
+            if(A_timer_status == 1){
+                /* timer already set, stop it to avoid warning */
+                stoptimer(0);
+            }
+            starttimer(0, MAXTIME);
+            A_timer_status = 1;
         }
     }
-    else if(A_status == A_Wait_for_call_from_above_1){
+    else{
+        /* corrupt, do nothing */
         #ifdef DEBUG
-            printf("A status: A_Wait_for_call_from_above_1\n");
+            printf("ACK corrupted\n");
         #endif
-        /* do nothing */
-    }
-    else if(A_status == A_Wait_for_ACK_1){
-        #ifdef DEBUG
-            printf("A status: A_Wait_for_ACK_1\n");
-        #endif
-        int isACK = packet.acknum;
-        int isCorr = isCorrupt(packet);
-
-        if((isCorr == 0) && (isACK == 1)){
-            /* notcorrupt and isACK */
-            #ifdef DEBUG
-                printf("A get ACK1 and ACK packet not corrupt, stop timer\n");
-            #endif
-            /* stop timer */
-            stoptimer(0);
-            /* status move */
-            A_status = A_Wait_for_call_from_above_0;
-        }
-        else {
-            /* corrupt or NAK */
-            #ifdef DEBUG
-                printf("A get ACK0 or corrupt, wait and do nothing\n");
-            #endif
-            /* do nothing */
-        }
     }
 
 }
@@ -319,19 +254,32 @@ A_timerinterrupt()
 {
     /* time expire */
     #ifdef DEBUG
-        printf("A timer expired, resend packet and start timer\n");
+        printf("A timer expired, resend packets in window and start timer\n");
     #endif
-    /* udt send*/
-    tolayer3(0, current_sending_pkt);
+    int i;
     /* start timer */
     starttimer(0, MAXTIME);
+    /* resend all packets in window */
+    for(i = base; i != nextseqnum; i = (i + 1) % SENDER_BUFFER_SIZE){
+        if((i % SENDER_BUFFER_SIZE) != (nextbufferpos % SENDER_BUFFER_SIZE)){
+            /* not exceed buffered packet, able to resend */
+            /* udt_send */
+            tolayer3(0, senderBuffer[i]);
+            #ifdef DEBUG
+                printf("A resend packet%d to layer3\n", i);
+            #endif
+        }
+    }
 }
 
 /* the following routine will be called once (only) before any other */
 /* entity A routines are called. You can use it to do any initialization */
 A_init()
 {
-    A_status = A_Wait_for_call_from_above_0;
+    base = 1;
+    nextseqnum = 1;
+    nextbufferpos = 1;
+    A_timer_status = 0;
 }
 
 
@@ -341,110 +289,38 @@ A_init()
 B_input(packet)
   struct pkt packet;
 {
+    int isCorr = isCorrupt(packet);
+    int seqNum = packet.seqnum;
+
     #ifdef DEBUG
-        printf("B has received packet\n");
+    printf("B has received packet: %d, isCorr: %d\n", seqNum, isCorr);
     #endif
-    if(B_status == B_Wait_for_call_from_below_0){
+
+    if((isCorr == 0) && (seqNum == expectedseqnum)){
         /* extract */
         struct msg message;
-        struct pkt sndpkt;
         extract(packet, &message);
-        /* test checksum for corruption */
-        int isCorr = isCorrupt(packet);
-        /* sequence number */
-        int seqNum = packet.seqnum;
-
-        if((isCorr == 0) && (seqNum == 0)){
-            /* notcorrupt and has_seq0 */
-            /* deliver_data */
-            #ifdef DEBUG
-            printf("B deliver to layer5\n");
-            #endif
-            tolayer5(1, message);
-            /* make_pkt(ACK, 0, checksum) */
-            #ifdef DEBUG
-            printf("notcorrupt and has_seq0, ACK0\n");
-            #endif
-            make_pkt(2, 0, &sndpkt, message);
-            /* status change */
-            B_status = B_Wait_for_call_from_below_1;
-        }
-        else if((isCorr == 1) || (seqNum == 1)){
-            /* corrupt or has_seq1 */
-            /* make_pkt(ACK, 1, checksum) */
-            #ifdef DEBUG
-            printf("corrupt or has_seq1, ACK1\n");
-            #endif
-            make_pkt(2, 1, &sndpkt, message);
-        }
-        else{
-            /* unexpected condition */
-            /* send ACK1 */
-            #ifdef DEBUG
-            printf("unexpected, ACK1\n");
-            #endif
-            make_pkt(2, 1, &sndpkt, message);
-        }
-
-        /* udt_send */
-        tolayer3(1, sndpkt);
+        /* deliver_data */
+        tolayer5(1, message);
         #ifdef DEBUG
-        printf("B send feedback to layer3\n");
+            printf("B deliver packet%d to layer5\n", seqNum);
         #endif
-    }else if(B_status == B_Wait_for_call_from_below_1){
-        /* extract */
-        struct msg message;
-        struct pkt sndpkt;
-        extract(packet, &message);
-        /* test checksum for corruption */
-        int isCorr = isCorrupt(packet);
-        /* sequence number */
-        int seqNum = packet.seqnum;
-
-        if((isCorr == 0) && (seqNum == 1)){
-            /* notcorrupt and has_seq1 */
-            /* deliver_data */
-            #ifdef DEBUG
-            printf("B deliver to layer5\n");
-            #endif
-            tolayer5(1, message);
-            /* make_pkt(ACK, 1, checksum) */
-            #ifdef DEBUG
-            printf("notcorrupt and has_seq1, ACK1\n");
-            #endif
-            make_pkt(2, 1, &sndpkt, message);
-            /* status change */
-            B_status = B_Wait_for_call_from_below_0;
-        }
-        else if((isCorr == 1) && (seqNum == 0)){
-            /* corrupt or has_seq0 */
-            /* make_pkt(ACK, 0, checksum) */
-            #ifdef DEBUG
-            printf("corrupt or has_seq0, ACK0\n");
-            #endif
-            make_pkt(2, 0, &sndpkt, message);
-        }
-        else{
-            /* unexpected condition */
-            /* send ACK0 */
-            #ifdef DEBUG
-            printf("unexpected, ACK0\n");
-            #endif
-            make_pkt(2, 0, &sndpkt, message);
-        }
-
+        /* sndpkt=make_pkt(expectedseqnum,ACK,checksum) */
+        make_pkt(DEFAULT_SEQ, expectedseqnum, &B_sndpkt, message);
         /* udt_send */
-        tolayer3(1, sndpkt);
+        tolayer3(1, B_sndpkt);
         #ifdef DEBUG
-        printf("B send feedback to layer3\n");
+            printf("B send ACK%d to layer3\n", expectedseqnum);
         #endif
+        /* increase expectedseqnum */
+        expectedseqnum = (expectedseqnum + 1) % SENDER_BUFFER_SIZE;
     }
     else{
-        /* unexpected condition */
-        #ifdef DEBUG
-        printf("B in unexpected condition\n");
-        #endif
+        /* default */
+        /* udt_send */
+        tolayer3(1, B_sndpkt);
     }
+
 }
 
 /* called when B's timer goes off */
@@ -456,7 +332,15 @@ B_timerinterrupt()
 /* entity B routines are called. You can use it to do any initialization */
 B_init()
 {
-    B_status = B_Wait_for_call_from_below_0;
+    expectedseqnum = 1;
+    /* meaningless message, only for make_pkt function */
+    int i;
+    struct msg message;
+    for(i=0; i<20; i++){
+        message.data[i] = 'F';
+    }
+    /* sndpkt=make_pkt(0,ACK,checksum) */
+    make_pkt(DEFAULT_SEQ, 0, &B_sndpkt, message);
 }
 
 
@@ -598,7 +482,7 @@ init()                         /* initialize the simulator */
   float jimsrand();
 
 
-   printf("-----  Stop and Wait Network Simulator Version 1.1 -------- \n\n");
+   printf("-----  Go Back N Network Simulator Version 1.1 -------- \n\n");
    printf("Enter the number of messages to simulate: ");
    scanf("%d",&nsimmax);
    printf("Enter  packet loss probability [enter 0.0 for no loss]:");
