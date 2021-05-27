@@ -24,5 +24,11 @@ add_executable(rdt_3
 add_executable(stopAndWait
         src/RDT_stopAndWait_ver.c)
 
+add_executable(stopAndWait_KRC
+        src/RDT_stopAndWait_KRC_ver.c)
+
 add_executable(goBackN
         src/RDT_goBackN_ver.c)
+
+add_executable(goBackN_KRC
+        src/RDT_goBackN_KRC_ver.c)
